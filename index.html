@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<!-- saved from url=(0056)file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARCmetry — Career Pathway Intelligence</title>
-<link rel="preconnect" href="https://fonts.googleapis.com/">
-<link href="./ARCmetry — Career Pathway Intelligence_files/css2" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --navy:   #0D1F3C;
@@ -28,8 +31,6 @@ body{background:var(--navy);color:var(--white);font-family:var(--font);font-size
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(13,31,60,0.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(31,122,140,0.15);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo-text{font-size:20px;font-weight:800;color:var(--white);letter-spacing:-0.02em;}
-.nav-logo-sub{font-family:var(--mono);font-size:9px;color:var(--teal2);letter-spacing:0.12em;text-transform:uppercase;display:block;margin-top:-2px;}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
 .nav-links a{color:rgba(244,248,252,0.6);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
 .nav-links a:hover{color:var(--teal2);}
@@ -38,8 +39,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative;overflow:hidden;}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.18;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,31,60,0.98) 40%,rgba(13,31,60,0.6) 100%);}
 .hero-content{position:relative;z-index:2;padding:140px 48px 80px;}
 .hero-eyebrow{font-family:var(--mono);font-size:11px;color:var(--teal2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
 .hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--teal2);}
@@ -58,7 +57,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn-ghost{color:rgba(244,248,252,0.6);font-size:14px;text-decoration:none;transition:color 0.2s;margin-left:20px;}
 .btn-ghost:hover{color:var(--teal2);}
 
-/* PEOPLE STRIP — 3 photos */
+/* PEOPLE STRIP */
 .people-strip{display:grid;grid-template-columns:repeat(3,1fr);height:320px;overflow:hidden;}
 .people-cell{position:relative;overflow:hidden;}
 .people-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s;}
@@ -114,7 +113,7 @@ h2.sh{font-size:clamp(26px,3.2vw,40px);font-weight:800;letter-spacing:-0.025em;l
 .tc-btn.p{background:rgba(123,45,139,0.2);color:#C084FC;border:1px solid rgba(123,45,139,0.35);}
 .tc-btn.p:hover{background:var(--purple);color:var(--white);}
 
-/* WHY — SPLIT WITH PHOTO */
+/* WHY */
 .why-split{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:560px;}
 .why-photo{position:relative;overflow:hidden;}
 .why-photo img{width:100%;height:100%;object-fit:cover;opacity:0.65;}
@@ -165,7 +164,7 @@ h2.sh{font-size:clamp(26px,3.2vw,40px);font-weight:800;letter-spacing:-0.025em;l
 .ps-n{width:26px;height:26px;background:rgba(31,122,140,0.15);border:1px solid rgba(31,122,140,0.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;color:var(--teal2);flex-shrink:0;}
 .ps-t{font-size:14px;font-weight:600;margin-bottom:2px;}
 .ps-b{font-size:12px;font-weight:300;color:var(--gray);line-height:1.5;}
-.pending{display:inline-block;background:rgba(224,123,57,0.15);border:1px solid rgba(224,123,57,0.3);color:var(--amber);font-family:var(--mono);font-size:9px;letter-spacing:0.06em;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:middle;}
+.pending{display:none;}
 
 /* FAQ */
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:52px;}
@@ -210,23 +209,21 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#home" class="nav-logo">
-    <img src="file:///C:/Users/charl/Downloads/arcmetry-logo.png" alt="ARCmetry" style="height:38px;width:auto;">
+  <a href="#home" class="nav-logo">
+    <img src="arcmetry-logo.png" alt="ARCmetry" style="height:38px;width:auto;">
   </a>
   <ul class="nav-links">
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#how">How It Works</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#reports">Reports</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#pathway">Pathway</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#mobility">Mobility</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#strategy">Strategy</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#faq">FAQ</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#reports" class="nav-cta">Get My Report</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#reports">Reports</a></li>
+    <li><a href="#pathway">Pathway</a></li>
+    <li><a href="#mobility">Mobility</a></li>
+    <li><a href="#strategy">Strategy</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#reports" class="nav-cta">Get My Report</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <div id="home">
   <div class="hero">
     <div class="hero-content">
@@ -234,8 +231,8 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
       <h1>You Don't Need a<br>Four-Year Degree.<br>You Need a <span class="accent">Plan.</span></h1>
       <p class="hero-sub">ARCmetry builds personalized career roadmaps anchored to real wage data in your state — so you know exactly what to do next and what it will actually pay.</p>
       <div class="hero-actions">
-        <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#reports" class="btn-primary">Get My Report — Starting at $19</a>
-        <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#how" class="btn-ghost">See how it works →</a>
+        <a href="#reports" class="btn-primary">Get My Report — Starting at $19.99</a>
+        <a href="#how" class="btn-ghost">See how it works →</a>
       </div>
       <div class="hero-stats">
         <div><div class="stat-num">48–72h</div><div class="stat-label">Report delivery</div></div>
@@ -244,15 +241,14 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
       </div>
     </div>
     <div class="hero-photo-col">
-      <img src="./ARCmetry — Career Pathway Intelligence_files/photo-1521737711867-e3b97375f902" alt="Diverse professionals collaborating">
+      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80" alt="Diverse professionals collaborating">
     </div>
   </div>
 </div>
 
-<!-- PEOPLE STRIP -->
 <div class="people-strip">
   <div class="people-cell">
-    <img src="./ARCmetry — Career Pathway Intelligence_files/photo-1582213782179-e0d53f98f2ca" alt="Healthcare worker">
+    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1000&q=80" alt="Healthcare worker">
     <div class="people-cell-overlay"></div>
     <div class="people-caption">
       <div class="people-caption-name">Healthcare pathway</div>
@@ -260,7 +256,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
     </div>
   </div>
   <div class="people-cell">
-    <img src="./ARCmetry — Career Pathway Intelligence_files/photo-1573496359142-b8d87734a5a2" alt="Professional woman at work">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" alt="Professional woman at work">
     <div class="people-cell-overlay"></div>
     <div class="people-caption">
       <div class="people-caption-name">Administrative mobility</div>
@@ -268,7 +264,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
     </div>
   </div>
   <div class="people-cell">
-    <img src="./ARCmetry — Career Pathway Intelligence_files/photo-1560250097-0b93528c311a" alt="Manager professional">
+    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80" alt="Manager professional">
     <div class="people-cell-overlay"></div>
     <div class="people-caption">
       <div class="people-caption-name">Director-level strategy</div>
@@ -279,7 +275,6 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider"></div>
 
-<!-- HOW IT WORKS -->
 <div id="how" class="how-band">
   <div class="section-wrap">
     <div class="eyebrow">The Process</div>
@@ -310,7 +305,6 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider"></div>
 
-<!-- TIER CARDS -->
 <section id="reports">
   <div class="section-wrap" style="padding-bottom:0;">
     <div class="eyebrow" style="justify-content:center;"><span style="width:0;"></span>Three Reports</div>
@@ -320,7 +314,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
       <div class="tc">
         <div class="tc-head">
-          <div class="tc-price g">$19</div>
+          <div class="tc-price g">$19.99</div>
           <div class="tc-name">Pathway Analysis</div>
           <div class="tc-best">Best for people trying to identify their first stable career path.</div>
           <div class="tc-focus">Focuses on career entry, training options, and the fastest route to full-time income.</div>
@@ -334,14 +328,14 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
             <li>12-month action plan with real next steps</li>
             <li>Entry and year 3 salary projection</li>
           </ul>
-          <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#pathway" class="tc-btn g">Get My Pathway Analysis →</a>
+          <a href="#pathway" class="tc-btn g">Get My Pathway Analysis →</a>
         </div>
       </div>
 
       <div class="tc feat">
         <div class="tc-pop">⭐ Most Popular</div>
         <div class="tc-head">
-          <div class="tc-price t">$39</div>
+          <div class="tc-price t">$39.99</div>
           <div class="tc-name">Mobility Analysis</div>
           <div class="tc-best">Best for workers who already have a job but want to increase their income or move up.</div>
           <div class="tc-focus">Focuses on advancement pathways, credential stacking, and income growth.</div>
@@ -355,13 +349,13 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
             <li>State-specific funding sources</li>
             <li>12–36 month pivot roadmap</li>
           </ul>
-          <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#mobility" class="tc-btn t">Get My Mobility Analysis →</a>
+          <a href="#mobility" class="tc-btn t">Get My Mobility Analysis →</a>
         </div>
       </div>
 
       <div class="tc">
         <div class="tc-head">
-          <div class="tc-price p">$69</div>
+          <div class="tc-price p">$69.99</div>
           <div class="tc-name">Career Strategy Report</div>
           <div class="tc-best">Best for professionals earning $50K+ or targeting management or director-level roles.</div>
           <div class="tc-focus">Focuses on career positioning, salary strategy, and long-term advancement planning.</div>
@@ -375,7 +369,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
             <li>Resume positioning rewrite examples</li>
             <li>12–36 month advancement roadmap</li>
           </ul>
-          <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#strategy" class="tc-btn p">Get My Career Strategy Report →</a>
+          <a href="#strategy" class="tc-btn p">Get My Career Strategy Report →</a>
         </div>
       </div>
 
@@ -385,10 +379,9 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider" style="margin-top:64px;"></div>
 
-<!-- WHY ARCMETRY — SPLIT WITH PHOTO -->
 <div class="why-split">
   <div class="why-photo">
-    <img src="./ARCmetry — Career Pathway Intelligence_files/photo-1531482615713-2afd69097998" alt="Adults in career training session">
+    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=80" alt="Adults in career training session">
   </div>
   <div class="why-text">
     <div class="eyebrow">Why ARCmetry</div>
@@ -422,16 +415,15 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider"></div>
 
-<!-- PATHWAY ANALYSIS -->
 <div id="pathway">
   <div class="svc-header path">
-    <div class="svc-badge path">Pathway Analysis · $19</div>
+    <div class="svc-badge path">Pathway Analysis · $19.99</div>
     <h1 class="svc-h1">Your First Real Career Plan.<br><span style="color:var(--teal3);">Not a Guess.</span></h1>
     <p class="svc-h2">A specific, state-grounded career direction — without the pressure to pick a college major and hope for the best.</p>
   </div>
   <div class="svc-body">
     <div>
-      <img class="svc-photo" src="./ARCmetry — Career Pathway Intelligence_files/photo-1522202176988-66273c2fd55f" alt="Young adults planning careers">
+      <img class="svc-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80" alt="Young adults planning careers">
       <div class="who-label">Who It's For</div>
       <ul class="who-list">
         <li>Trying to identify your first stable career path</li>
@@ -450,7 +442,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
     <div>
       <div class="svc-box">
         <div class="svc-box-label">What's Included</div>
-        <div class="svc-price g">$19</div>
+        <div class="svc-price g">$19.99</div>
         <div class="svc-billing">one-time · no subscription</div>
         <ul class="inc-list">
           <li>Executive summary and client overview</li>
@@ -462,7 +454,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
           <li>Salary outlook: entry and 3-year target</li>
           <li>Barrier assessment and risk flags</li>
         </ul>
-        <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#" class="svc-cta g">Get My Pathway Analysis — $19 <span class="pending">Link pending</span></a>
+        <a href="#" class="svc-cta g">Get My Pathway Analysis — $19.99</a>
         <p class="svc-note">Intake form sent within 24 hrs of purchase.<br>Report delivered within 48–72 hrs of completed intake.</p>
       </div>
     </div>
@@ -471,16 +463,15 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider"></div>
 
-<!-- MOBILITY ANALYSIS -->
 <div id="mobility">
   <div class="svc-header mob">
-    <div class="svc-badge mob">Mobility Analysis · $39 · Most Popular</div>
+    <div class="svc-badge mob">Mobility Analysis · $39.99 · Most Popular</div>
     <h1 class="svc-h1">You're Not Starting Over.<br><span style="color:var(--teal2);">You're Redirecting.</span></h1>
     <p class="svc-h2">Maps your existing skills to higher-paying pathways and shows you the fastest, most affordable way to get there in your state.</p>
   </div>
   <div class="svc-body">
     <div>
-      <img class="svc-photo" src="./ARCmetry — Career Pathway Intelligence_files/photo-1551836022-d5d88e9218df" alt="Working professional woman">
+      <img class="svc-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80" alt="Working professional woman">
       <div class="who-label">Who It's For</div>
       <ul class="who-list">
         <li>Already working but want to increase your income or move up</li>
@@ -501,7 +492,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
     <div>
       <div class="svc-box">
         <div class="svc-box-label">What's Included</div>
-        <div class="svc-price t">$39</div>
+        <div class="svc-price t">$39.99</div>
         <div class="svc-billing">one-time · no subscription</div>
         <ul class="inc-list">
           <li>Transferable skills analysis</li>
@@ -513,7 +504,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
           <li>12–36 month pivot roadmap</li>
           <li>Risk flags and mitigation guidance</li>
         </ul>
-        <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#" class="svc-cta t">Get My Mobility Analysis — $39 <span class="pending">Link pending</span></a>
+        <a href="#" class="svc-cta t">Get My Mobility Analysis — $39.99</a>
         <p class="svc-note">Intake form sent within 24 hrs of purchase.<br>Report delivered within 48–72 hrs of completed intake.</p>
       </div>
     </div>
@@ -522,16 +513,15 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider"></div>
 
-<!-- CAREER STRATEGY -->
 <div id="strategy">
   <div class="svc-header strat">
-    <div class="svc-badge strat">Career Strategy Report · $69</div>
+    <div class="svc-badge strat">Career Strategy Report · $69.99</div>
     <h1 class="svc-h1">You've Built the Experience.<br><span style="color:#C084FC;">Now Get Paid for It.</span></h1>
     <p class="svc-h2">Diagnoses exactly why your salary hasn't caught up with your value — and gives you a specific strategy to fix it in your state's job market.</p>
   </div>
   <div class="svc-body">
     <div>
-      <img class="svc-photo" src="./ARCmetry — Career Pathway Intelligence_files/photo-1600880292203-757bb62b4baf" alt="Senior professional in meeting">
+      <img class="svc-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80" alt="Senior professional in meeting">
       <div class="who-label">Who It's For</div>
       <ul class="who-list">
         <li>Already earning $50K+ or actively targeting a management or director-level role</li>
@@ -550,7 +540,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
     <div>
       <div class="svc-box">
         <div class="svc-box-label">What's Included</div>
-        <div class="svc-price p">$69</div>
+        <div class="svc-price p">$69.99</div>
         <div class="svc-billing">one-time · no subscription</div>
         <ul class="inc-list">
           <li>Gap diagnosis: credential, visibility, market</li>
@@ -562,7 +552,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
           <li>Resume positioning rewrite examples</li>
           <li>12–36 month advancement roadmap</li>
         </ul>
-        <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#" class="svc-cta p">Get My Career Strategy Report — $69 <span class="pending">Link pending</span></a>
+        <a href="#" class="svc-cta p">Get My Career Strategy Report — $69.99</a>
         <p class="svc-note">Intake form sent within 24 hrs of purchase.<br>Report delivered within 48–72 hrs of completed intake.</p>
       </div>
     </div>
@@ -571,7 +561,6 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider"></div>
 
-<!-- FAQ -->
 <section id="faq">
   <div class="section-wrap">
     <div class="eyebrow">FAQ</div>
@@ -579,7 +568,7 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
     <div class="faq-grid">
       <div class="faq-item">
         <div class="faq-q">How do I know which report to choose?</div>
-        <div class="faq-a">→ Trying to identify your first stable career path — <strong style="color:var(--teal2);">Pathway Analysis ($19)</strong><br><br>→ Already working but want to increase your income or move up — <strong style="color:var(--teal2);">Mobility Analysis ($39)</strong> — Most Popular<br><br>→ Earning $50K+ or targeting management or director-level roles — <strong style="color:var(--teal2);">Career Strategy Report ($69)</strong></div>
+        <div class="faq-a">→ Trying to identify your first stable career path — <strong style="color:var(--teal2);">Pathway Analysis ($19.99)</strong><br><br>→ Already working but want to increase your income or move up — <strong style="color:var(--teal2);">Mobility Analysis ($39.99)</strong> — Most Popular<br><br>→ Earning $50K+ or targeting management or director-level roles — <strong style="color:var(--teal2);">Career Strategy Report ($69.99)</strong></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How long does it take to receive my report?</div>
@@ -607,33 +596,30 @@ footer{background:rgba(8,18,36,0.98);border-top:1px solid rgba(31,122,140,0.1);p
 
 <div class="divider"></div>
 
-<!-- BOTTOM CTA -->
 <div class="cta-band">
   <div class="eyebrow" style="justify-content:center;"><span style="width:0;"></span>Stop guessing. Start moving.</div>
   <h2 class="sh" style="font-size:clamp(26px,3.5vw,42px);margin:0 auto 14px;">Your career direction should be<br>based on real data.</h2>
   <p class="sub" style="margin:0 auto 36px;text-align:center;">What pays in your state. What's in demand. What you can get certified in without going broke.</p>
-  <a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#reports" class="btn-primary" style="font-size:16px;padding:16px 36px;">Get My Report — Starting at $19</a>
+  <a href="#reports" class="btn-primary" style="font-size:16px;padding:16px 36px;">Get My Report — Starting at $19.99</a>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-logo">
-    <img src="file:///C:/Users/charl/Downloads/arcmetry-logo.png" alt="ARCmetry" style="height:32px;width:auto;">
+    <img src="arcmetry-logo.png" alt="ARCmetry" style="height:32px;width:auto;">
     <div>
       <span style="font-size:15px;font-weight:800;color:var(--white);">ARCmetry</span>
       <div class="foot-tagline">Career Pathway Intelligence · arcmetry.com</div>
     </div>
   </div>
   <ul class="foot-links">
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#how">How It Works</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#pathway">Pathway Analysis</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#mobility">Mobility Analysis</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#strategy">Career Strategy</a></li>
-    <li><a href="file:///C:/Users/charl/Downloads/ARCmetry_Website_2.html#faq">FAQ</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#pathway">Pathway Analysis</a></li>
+    <li><a href="#mobility">Mobility Analysis</a></li>
+    <li><a href="#strategy">Career Strategy</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="foot-copy">© 2026 ARCmetry · All rights reserved</div>
 </footer>
 
-
-
-</body></html>
+</body>
+</html>
