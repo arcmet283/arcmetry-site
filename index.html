@@ -109,12 +109,13 @@ nav{
   position:relative;
   z-index:2;
   padding:140px 48px 80px;
+  background:rgba(244,248,252,0.78);
 }
 
 .hero-eyebrow{
   font-family:var(--mono);
   font-size:11px;
-  color:var(--teal2);
+  color:var(--teal);
   letter-spacing:0.15em;
   text-transform:uppercase;
   margin-bottom:24px;
@@ -137,7 +138,7 @@ nav{
   line-height:1.08;
   letter-spacing:-0.025em;
   margin-bottom:22px;
-  color:var(--white);
+  color:var(--navy);
 }
 
 .hero h1 .accent{color:var(--teal2);}
@@ -145,7 +146,7 @@ nav{
 .hero-sub{
   font-size:17px;
   font-weight:300;
-  color:rgba(244,248,252,0.72);
+  color:#425b76;
   line-height:1.7;
   max-width:480px;
   margin-bottom:36px;
@@ -198,7 +199,7 @@ nav{
 
 .stat-label{
   font-size:11px;
-  color:var(--gray);
+  color:#5f7791;
   margin-top:3px;
 }
 
@@ -221,7 +222,7 @@ nav{
 }
 
 .btn-ghost{
-  color:rgba(244,248,252,0.68);
+  color:#4f6780;
   font-size:14px;
   text-decoration:none;
   transition:color 0.2s;
@@ -310,13 +311,13 @@ h2.sh{
   letter-spacing:-0.025em;
   line-height:1.1;
   margin-bottom:14px;
-  color:var(--white);
+  color:var(--navy);
 }
 
 .sub{
   font-size:16px;
   font-weight:300;
-  color:rgba(244,248,252,0.58);
+  color:#4f6780;
   max-width:520px;
   line-height:1.7;
 }
@@ -329,7 +330,7 @@ h2.sh{
 
 /* HOW IT WORKS */
 .how-band{
-  background:rgba(22,43,77,0.5);
+  background:rgba(22,43,77,0.18);
   border-top:1px solid rgba(31,122,140,0.1);
   border-bottom:1px solid rgba(31,122,140,0.1);
 }
@@ -352,7 +353,7 @@ h2.sh{
   font-family:var(--mono);
   font-size:48px;
   font-weight:500;
-  color:rgba(31,122,140,0.15);
+  color:rgba(31,122,140,0.22);
   line-height:1;
   margin-bottom:18px;
 }
@@ -361,12 +362,13 @@ h2.sh{
   font-size:17px;
   font-weight:700;
   margin-bottom:10px;
+  color:var(--navy);
 }
 
 .step-b{
   font-size:14px;
   font-weight:300;
-  color:rgba(244,248,252,0.52);
+  color:#4f6780;
   line-height:1.7;
 }
 
@@ -391,18 +393,18 @@ h2.sh{
   border-radius:14px;
   overflow:hidden;
   border:1px solid rgba(31,122,140,0.15);
-  background:rgba(22,43,77,0.5);
+  background:rgba(22,43,77,0.38);
   transition:transform 0.25s,box-shadow 0.25s;
 }
 
 .tc:hover{
   transform:translateY(-5px);
-  box-shadow:0 20px 56px rgba(0,0,0,0.4);
+  box-shadow:0 20px 56px rgba(0,0,0,0.22);
 }
 
 .tc.feat{
   border-color:var(--teal2);
-  box-shadow:0 0 0 1px var(--teal2),0 12px 48px rgba(31,122,140,0.2);
+  box-shadow:0 0 0 1px var(--teal2),0 12px 48px rgba(31,122,140,0.15);
   transform:scale(1.025);
 }
 
@@ -440,12 +442,13 @@ h2.sh{
   font-size:15px;
   font-weight:700;
   margin-bottom:10px;
+  color:var(--navy);
 }
 
 .tc-best{
   font-size:13px;
   font-weight:500;
-  color:rgba(244,248,252,0.86);
+  color:#223b57;
   line-height:1.5;
   margin-bottom:6px;
 }
@@ -453,7 +456,7 @@ h2.sh{
 .tc-focus{
   font-size:12px;
   font-weight:300;
-  color:var(--gray);
+  color:#5d7490;
   line-height:1.5;
 }
 
@@ -467,7 +470,7 @@ h2.sh{
 .tc-list li{
   font-size:13px;
   font-weight:300;
-  color:rgba(244,248,252,0.62);
+  color:#425b76;
   padding:6px 0;
   border-bottom:1px solid rgba(31,122,140,0.08);
   display:flex;
@@ -502,7 +505,7 @@ h2.sh{
 
 .tc-btn.g{
   background:rgba(45,106,79,0.2);
-  color:var(--teal3);
+  color:var(--green);
   border:1px solid rgba(45,106,79,0.35);
 }
 
@@ -520,7 +523,7 @@ h2.sh{
 
 .tc-btn.p{
   background:rgba(123,45,139,0.2);
-  color:#C084FC;
+  color:#8d4bd8;
   border:1px solid rgba(123,45,139,0.35);
 }
 
@@ -561,6 +564,9 @@ h2.sh{
   justify-content:center;
 }
 
+.why-text h2.sh{color:var(--white);}
+.why-text .sub{color:rgba(244,248,252,0.6);}
+
 .why-points{
   display:flex;
   flex-direction:column;
@@ -591,6 +597,7 @@ h2.sh{
   font-size:15px;
   font-weight:700;
   margin-bottom:3px;
+  color:var(--white);
 }
 
 .wp-b{
@@ -850,7 +857,7 @@ h2.sh{
 
 .faq-item{
   padding:30px;
-  background:rgba(22,43,77,0.4);
+  background:rgba(22,43,77,0.18);
   border:1px solid rgba(31,122,140,0.08);
 }
 
@@ -858,12 +865,13 @@ h2.sh{
   font-size:15px;
   font-weight:700;
   margin-bottom:10px;
+  color:var(--navy);
 }
 
 .faq-a{
   font-size:13px;
   font-weight:300;
-  color:rgba(244,248,252,0.52);
+  color:#4f6780;
   line-height:1.7;
 }
 
@@ -875,6 +883,9 @@ h2.sh{
   text-align:center;
   padding:80px 48px;
 }
+
+.cta-band h2.sh{color:var(--white);}
+.cta-band .sub{color:rgba(244,248,252,0.62);}
 
 /* FOOTER */
 footer{
