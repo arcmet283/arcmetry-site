@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARCmetry — Career Pathway Intelligence</title>
+<meta name="description" content="ARCmetry delivers personalized, state-specific career pathway reports based on your skills, barriers, and goals.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +26,9 @@
   --mono:   'DM Mono', monospace;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-
-body{
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
   background: linear-gradient(180deg, #f4f8fc 0%, #dfeaf5 18%, #0D1F3C 55%, #0D1F3C 100%);
   color: var(--white);
   font-family: var(--font);
@@ -37,30 +37,41 @@ body{
   overflow-x: hidden;
 }
 
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:16px 48px;
-  background:rgba(13,31,60,0.82);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(31,122,140,0.15);
+/* Prevent fixed nav from covering anchor targets */
+#home,
+#how,
+#reports,
+#pathway,
+#mobility,
+#strategy,
+#faq {
+  scroll-margin-top: 92px;
 }
 
-.nav-logo{
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: rgba(13,31,60,0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(31,122,140,0.15);
+}
+
+.nav-logo {
   display:flex;
   align-items:center;
   gap:10px;
   text-decoration:none;
 }
 
-.text-logo{
+.text-logo {
   font-size:22px;
   font-weight:800;
   color:var(--white);
@@ -68,14 +79,14 @@ nav{
   text-decoration:none;
 }
 
-.nav-links{
+.nav-links {
   display:flex;
   align-items:center;
   gap:28px;
   list-style:none;
 }
 
-.nav-links a{
+.nav-links a {
   color:rgba(244,248,252,0.7);
   text-decoration:none;
   font-size:13px;
@@ -83,20 +94,30 @@ nav{
   transition:color 0.2s;
 }
 
-.nav-links a:hover{color:var(--teal2);}
+.nav-links a:hover { color:var(--teal2); }
 
-.nav-cta{
+.nav-cta,
+.mobile-nav-cta {
   background:var(--teal);
   color:var(--white)!important;
   padding:9px 20px;
   border-radius:6px;
   font-weight:700!important;
+  text-decoration:none;
 }
 
-.nav-cta:hover{background:var(--teal2)!important;}
+.nav-cta:hover,
+.mobile-nav-cta:hover {
+  background:var(--teal2)!important;
+}
+
+.mobile-nav-cta {
+  display:none;
+  font-size:13px;
+}
 
 /* HERO */
-.hero{
+.hero {
   min-height:100vh;
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -105,14 +126,14 @@ nav{
   overflow:hidden;
 }
 
-.hero-content{
+.hero-content {
   position:relative;
   z-index:2;
   padding:140px 48px 80px;
   background:rgba(244,248,252,0.88);
 }
 
-.hero-eyebrow{
+.hero-eyebrow {
   font-family:var(--mono);
   font-size:11px;
   color:var(--teal);
@@ -124,7 +145,7 @@ nav{
   gap:10px;
 }
 
-.hero-eyebrow::before{
+.hero-eyebrow::before {
   content:'';
   display:block;
   width:28px;
@@ -132,7 +153,7 @@ nav{
   background:var(--teal2);
 }
 
-.hero h1{
+.hero h1 {
   font-size:clamp(36px,4.5vw,60px);
   font-weight:800;
   line-height:1.08;
@@ -141,9 +162,9 @@ nav{
   color:var(--navy);
 }
 
-.hero h1 .accent{color:var(--teal2);}
+.hero h1 .accent { color:var(--teal2); }
 
-.hero-sub{
+.hero-sub {
   font-size:17px;
   font-weight:300;
   color:#425b76;
@@ -152,21 +173,28 @@ nav{
   margin-bottom:36px;
 }
 
-.hero-photo-col{
+.hero-actions {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.hero-photo-col {
   position:relative;
   z-index:2;
   height:100vh;
   overflow:hidden;
 }
 
-.hero-photo-col img{
+.hero-photo-col img {
   width:100%;
   height:100%;
   object-fit:cover;
   opacity:0.55;
 }
 
-.hero-photo-col::before{
+.hero-photo-col::before {
   content:'';
   position:absolute;
   inset:0;
@@ -174,7 +202,7 @@ nav{
   z-index:1;
 }
 
-.hero-photo-col::after{
+.hero-photo-col::after {
   content:'';
   position:absolute;
   inset:0;
@@ -182,7 +210,7 @@ nav{
   z-index:1;
 }
 
-.hero-stats{
+.hero-stats {
   display:flex;
   gap:36px;
   margin-top:48px;
@@ -190,20 +218,20 @@ nav{
   border-top:1px solid rgba(31,122,140,0.2);
 }
 
-.stat-num{
+.stat-num {
   font-size:26px;
   font-weight:800;
   color:var(--teal2);
   line-height:1;
 }
 
-.stat-label{
+.stat-label {
   font-size:11px;
   color:#5f7791;
   margin-top:3px;
 }
 
-.btn-primary{
+.btn-primary {
   display:inline-block;
   background:linear-gradient(135deg,var(--teal),var(--teal2));
   color:var(--white);
@@ -216,47 +244,46 @@ nav{
   transition:all 0.2s;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
   transform:translateY(-2px);
   box-shadow:0 8px 32px rgba(31,122,140,0.5);
 }
 
-.btn-ghost{
+.btn-ghost {
   color:var(--navy);
   font-size:14px;
   text-decoration:none;
   transition:color 0.2s;
-  margin-left:20px;
 }
 
-.btn-ghost:hover{color:var(--teal2);}
+.btn-ghost:hover { color:var(--teal2); }
 
 /* PEOPLE STRIP */
-.people-strip{
+.people-strip {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   height:320px;
   overflow:hidden;
 }
 
-.people-cell{position:relative;overflow:hidden;}
+.people-cell { position:relative; overflow:hidden; }
 
-.people-cell img{
+.people-cell img {
   width:100%;
   height:100%;
   object-fit:cover;
   transition:transform 0.6s;
 }
 
-.people-cell:hover img{transform:scale(1.04);}
+.people-cell:hover img { transform:scale(1.04); }
 
-.people-cell-overlay{
+.people-cell-overlay {
   position:absolute;
   inset:0;
   background:linear-gradient(180deg,transparent 40%,rgba(13,31,60,0.92) 100%);
 }
 
-.people-caption{
+.people-caption {
   position:absolute;
   bottom:0;
   left:0;
@@ -264,14 +291,14 @@ nav{
   padding:20px 24px;
 }
 
-.people-caption-name{
+.people-caption-name {
   font-size:13px;
   font-weight:700;
   color:var(--white);
   margin-bottom:2px;
 }
 
-.people-caption-desc{
+.people-caption-desc {
   font-family:var(--mono);
   font-size:10px;
   color:var(--teal2);
@@ -279,13 +306,13 @@ nav{
 }
 
 /* SECTIONS */
-.section-wrap{
+.section-wrap {
   max-width:1200px;
   margin:0 auto;
   padding:88px 48px;
 }
 
-.eyebrow{
+.eyebrow {
   font-family:var(--mono);
   font-size:11px;
   color:var(--teal2);
@@ -297,7 +324,7 @@ nav{
   gap:10px;
 }
 
-.eyebrow::before{
+.eyebrow::before {
   content:'';
   display:block;
   width:20px;
@@ -305,7 +332,15 @@ nav{
   background:var(--teal2);
 }
 
-h2.sh{
+.eyebrow.centered {
+  justify-content:center;
+}
+
+.eyebrow.centered::before {
+  display:none;
+}
+
+h2.sh {
   font-size:clamp(26px,3.2vw,40px);
   font-weight:800;
   letter-spacing:-0.025em;
@@ -314,7 +349,7 @@ h2.sh{
   color:var(--navy);
 }
 
-.sub{
+.sub {
   font-size:16px;
   font-weight:300;
   color:#4f6780;
@@ -322,44 +357,44 @@ h2.sh{
   line-height:1.7;
 }
 
-#how .sub{
+#how .sub {
   color:#4a627c;
   max-width:560px;
 }
 
-.divider{
+.divider {
   height:1px;
   background:linear-gradient(90deg,transparent,rgba(31,122,140,0.18),transparent);
   margin:0 48px;
 }
 
 /* HOW IT WORKS */
-.how-band{
+.how-band {
   background:#ffffff;
   border-top:1px solid rgba(13,31,60,0.08);
   border-bottom:1px solid rgba(13,31,60,0.08);
 }
 
-.steps{
+.steps {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:0;
   margin-top:52px;
 }
 
-.step{
+.step {
   padding:42px 32px;
   border-right:1px solid rgba(13,31,60,0.08);
   transition:all .2s ease;
 }
 
-.step:hover{
+.step:hover {
   transform:translateY(-3px);
 }
 
-.step:last-child{border-right:none;}
+.step:last-child { border-right:none; }
 
-.step-n{
+.step-n {
   font-family: var(--mono);
   font-size: 48px;
   font-weight: 500;
@@ -368,21 +403,21 @@ h2.sh{
   margin-bottom: 18px;
 }
 
-.step-t{
+.step-t {
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 10px;
   color: var(--navy);
 }
 
-.step-b{
+.step-b {
   font-size: 14px;
   font-weight: 300;
   color: #3f5873;
   line-height: 1.8;
 }
 
-.step-time{
+.step-time {
   margin-top:16px;
   font-family:var(--mono);
   font-size:10px;
@@ -391,7 +426,7 @@ h2.sh{
 }
 
 /* TIERS */
-.tiers-grid{
+.tiers-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:20px;
@@ -399,28 +434,28 @@ h2.sh{
   align-items:start;
 }
 
-.tc{
+.tc {
   border-radius:14px;
   overflow:hidden;
   border:1px solid rgba(31,122,140,0.15);
   background:rgba(255,255,255,0.55);
-  transition:transform 0.25s,box-shadow 0.25s;
+  transition:transform 0.25s, box-shadow 0.25s;
 }
 
-.tc:hover{
+.tc:hover {
   transform:translateY(-5px);
   box-shadow:0 20px 56px rgba(0,0,0,0.22);
 }
 
-.tc.feat{
+.tc.feat {
   border-color:var(--teal2);
-  box-shadow:0 0 0 1px var(--teal2),0 12px 48px rgba(31,122,140,0.15);
+  box-shadow:0 0 0 1px var(--teal2), 0 12px 48px rgba(31,122,140,0.15);
   transform:scale(1.025);
 }
 
-.tc.feat:hover{transform:scale(1.025) translateY(-5px);}
+.tc.feat:hover { transform:scale(1.025) translateY(-5px); }
 
-.tc-pop{
+.tc-pop {
   background:var(--teal2);
   color:var(--navy);
   font-family:var(--mono);
@@ -432,30 +467,30 @@ h2.sh{
   padding:7px;
 }
 
-.tc-head{
+.tc-head {
   padding:28px 24px 20px;
   border-bottom:1px solid rgba(31,122,140,0.1);
 }
 
-.tc-price{
+.tc-price {
   font-size:40px;
   font-weight:800;
   line-height:1;
   margin-bottom:4px;
 }
 
-.tc-price.g{color:var(--teal3);}
-.tc-price.t{color:var(--teal2);}
-.tc-price.p{color:#C084FC;}
+.tc-price.g { color:var(--teal3); }
+.tc-price.t { color:var(--teal2); }
+.tc-price.p { color:#C084FC; }
 
-.tc-name{
+.tc-name {
   font-size:15px;
   font-weight:700;
   margin-bottom:10px;
   color:var(--navy);
 }
 
-.tc-best{
+.tc-best {
   font-size:13px;
   font-weight:500;
   color:#223b57;
@@ -463,21 +498,21 @@ h2.sh{
   margin-bottom:6px;
 }
 
-.tc-focus{
+.tc-focus {
   font-size:12px;
   font-weight:300;
   color:#5d7490;
   line-height:1.5;
 }
 
-.tc-body{padding:20px 24px 24px;}
+.tc-body { padding:20px 24px 24px; }
 
-.tc-list{
+.tc-list {
   list-style:none;
   margin-bottom:24px;
 }
 
-.tc-list li{
+.tc-list li {
   font-size:13px;
   font-weight:300;
   color:#425b76;
@@ -489,7 +524,7 @@ h2.sh{
   line-height:1.4;
 }
 
-.tc-list li::before{
+.tc-list li::before {
   content:'→';
   color:var(--teal2);
   font-size:11px;
@@ -497,9 +532,9 @@ h2.sh{
   margin-top:1px;
 }
 
-.tc-list li:last-child{border-bottom:none;}
+.tc-list li:last-child { border-bottom:none; }
 
-.tc-btn{
+.tc-btn {
   display:block;
   width:100%;
   padding:12px;
@@ -513,60 +548,68 @@ h2.sh{
   cursor:pointer;
 }
 
-.tc-btn.g{
+.tc-btn.g {
   background:rgba(45,106,79,0.2);
   color:var(--green);
   border:1px solid rgba(45,106,79,0.35);
 }
 
-.tc-btn.g:hover{
+.tc-btn.g:hover {
   background:var(--green);
   color:var(--white);
 }
 
-.tc-btn.t{
+.tc-btn.t {
   background:var(--teal);
   color:var(--white);
 }
 
-.tc-btn.t:hover{background:var(--teal2);}
+.tc-btn.t:hover { background:var(--teal2); }
 
-.tc-btn.p{
+.tc-btn.p {
   background:rgba(123,45,139,0.2);
   color:#8d4bd8;
   border:1px solid rgba(123,45,139,0.35);
 }
 
-.tc-btn.p:hover{
+.tc-btn.p:hover {
   background:var(--purple);
   color:var(--white);
 }
 
+.tc-note {
+  margin-top:12px;
+  font-size:11px;
+  color:#5f7791;
+  line-height:1.6;
+  text-align:center;
+}
+
 /* WHY */
-.why-split{
+.why-split {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:0;
   min-height:560px;
 }
 
-.why-photo{position:relative;overflow:hidden;}
+.why-photo { position:relative; overflow:hidden; }
 
-.why-photo img{
+.why-photo img {
   width:100%;
   height:100%;
   object-fit:cover;
   opacity:0.65;
 }
 
-.why-photo::after{
+.why-photo::after {
   content:'';
   position:absolute;
   inset:0;
   background:linear-gradient(90deg,var(--navy2) 0%,transparent 60%);
 }
 
-.why-text{
+.why-text {
   background:var(--navy2);
   padding:72px 56px;
   display:flex;
@@ -574,23 +617,23 @@ h2.sh{
   justify-content:center;
 }
 
-.why-text h2.sh{color:var(--white);}
-.why-text .sub{color:rgba(244,248,252,0.6);}
+.why-text h2.sh { color:var(--white); }
+.why-text .sub { color:rgba(244,248,252,0.6); }
 
-.why-points{
+.why-points {
   display:flex;
   flex-direction:column;
   gap:24px;
   margin-top:36px;
 }
 
-.wp{
+.wp {
   display:flex;
   gap:16px;
   align-items:flex-start;
 }
 
-.wp-icon{
+.wp-icon {
   width:38px;
   height:38px;
   border-radius:9px;
@@ -603,14 +646,14 @@ h2.sh{
   flex-shrink:0;
 }
 
-.wp-t{
+.wp-t {
   font-size:15px;
   font-weight:700;
   margin-bottom:3px;
   color:var(--white);
 }
 
-.wp-b{
+.wp-b {
   font-size:13px;
   font-weight:300;
   color:rgba(244,248,252,0.52);
@@ -618,28 +661,28 @@ h2.sh{
 }
 
 /* SERVICE PAGES */
-.svc-header{
+.svc-header {
   padding:72px 48px 52px;
   position:relative;
   overflow:hidden;
 }
 
-.svc-header.path{
+.svc-header.path {
   background:linear-gradient(135deg,rgba(45,106,79,0.2) 0%,rgba(13,31,60,0.97) 100%);
   border-top:1px solid rgba(45,106,79,0.2);
 }
 
-.svc-header.mob{
+.svc-header.mob {
   background:linear-gradient(135deg,rgba(31,122,140,0.2) 0%,rgba(13,31,60,0.97) 100%);
   border-top:1px solid rgba(31,122,140,0.2);
 }
 
-.svc-header.strat{
+.svc-header.strat {
   background:linear-gradient(135deg,rgba(123,45,139,0.2) 0%,rgba(13,31,60,0.97) 100%);
   border-top:1px solid rgba(123,45,139,0.2);
 }
 
-.svc-badge{
+.svc-badge {
   font-family:var(--mono);
   font-size:10px;
   letter-spacing:0.14em;
@@ -650,11 +693,11 @@ h2.sh{
   margin-bottom:18px;
 }
 
-.svc-badge.path{background:rgba(45,106,79,0.2);color:var(--teal3);}
-.svc-badge.mob{background:rgba(31,122,140,0.2);color:var(--teal2);}
-.svc-badge.strat{background:rgba(123,45,139,0.2);color:#C084FC;}
+.svc-badge.path { background:rgba(45,106,79,0.2); color:var(--teal3); }
+.svc-badge.mob { background:rgba(31,122,140,0.2); color:var(--teal2); }
+.svc-badge.strat { background:rgba(123,45,139,0.2); color:#C084FC; }
 
-.svc-h1{
+.svc-h1 {
   font-size:clamp(28px,3.8vw,48px);
   font-weight:800;
   letter-spacing:-0.025em;
@@ -662,7 +705,7 @@ h2.sh{
   margin-bottom:14px;
 }
 
-.svc-h2{
+.svc-h2 {
   font-size:16px;
   font-weight:300;
   color:rgba(244,248,252,0.62);
@@ -670,7 +713,7 @@ h2.sh{
   line-height:1.7;
 }
 
-.svc-body{
+.svc-body {
   padding:52px 48px;
   display:grid;
   grid-template-columns:1fr 360px;
@@ -679,7 +722,7 @@ h2.sh{
   margin:0 auto;
 }
 
-.svc-photo{
+.svc-photo {
   width:100%;
   height:260px;
   object-fit:cover;
@@ -688,7 +731,7 @@ h2.sh{
   opacity:0.8;
 }
 
-.who-label{
+.who-label {
   font-family:var(--mono);
   font-size:10px;
   color:var(--teal2);
@@ -697,14 +740,14 @@ h2.sh{
   margin-bottom:18px;
 }
 
-.who-list{
+.who-list {
   list-style:none;
   display:flex;
   flex-direction:column;
   gap:12px;
 }
 
-.who-list li{
+.who-list li {
   display:flex;
   gap:12px;
   font-size:15px;
@@ -713,14 +756,14 @@ h2.sh{
   line-height:1.55;
 }
 
-.who-list li::before{
+.who-list li::before {
   content:'→';
   color:var(--teal2);
   flex-shrink:0;
   margin-top:1px;
 }
 
-.svc-box{
+.svc-box {
   background:rgba(22,43,77,0.65);
   border:1px solid rgba(31,122,140,0.15);
   border-radius:14px;
@@ -729,7 +772,7 @@ h2.sh{
   top:88px;
 }
 
-.svc-box-label{
+.svc-box-label {
   font-family:var(--mono);
   font-size:10px;
   color:var(--teal2);
@@ -738,29 +781,29 @@ h2.sh{
   margin-bottom:18px;
 }
 
-.svc-price{
+.svc-price {
   font-size:36px;
   font-weight:800;
   line-height:1;
   margin-bottom:3px;
 }
 
-.svc-price.g{color:var(--teal3);}
-.svc-price.t{color:var(--teal2);}
-.svc-price.p{color:#C084FC;}
+.svc-price.g { color:var(--teal3); }
+.svc-price.t { color:var(--teal2); }
+.svc-price.p { color:#C084FC; }
 
-.svc-billing{
+.svc-billing {
   font-size:12px;
   color:var(--gray);
   margin-bottom:22px;
 }
 
-.inc-list{
+.inc-list {
   list-style:none;
   margin-bottom:22px;
 }
 
-.inc-list li{
+.inc-list li {
   font-size:13px;
   font-weight:300;
   color:rgba(244,248,252,0.62);
@@ -772,7 +815,7 @@ h2.sh{
   line-height:1.4;
 }
 
-.inc-list li::before{
+.inc-list li::before {
   content:'✓';
   color:var(--teal3);
   font-size:11px;
@@ -780,9 +823,9 @@ h2.sh{
   margin-top:1px;
 }
 
-.inc-list li:last-child{border-bottom:none;}
+.inc-list li:last-child { border-bottom:none; }
 
-.svc-cta{
+.svc-cta {
   display:block;
   width:100%;
   padding:13px;
@@ -796,24 +839,24 @@ h2.sh{
   cursor:pointer;
 }
 
-.svc-cta.g{background:var(--green);color:var(--white);}
-.svc-cta.t{background:var(--teal);color:var(--white);}
-.svc-cta.p{background:var(--purple);color:var(--white);}
+.svc-cta.g { background:var(--green); color:var(--white); }
+.svc-cta.t { background:var(--teal); color:var(--white); }
+.svc-cta.p { background:var(--purple); color:var(--white); }
 
-.svc-note{
+.svc-note {
   font-size:11px;
   color:var(--gray);
   text-align:center;
   line-height:1.6;
 }
 
-.ps-wrap{
+.ps-wrap {
   margin-top:36px;
   padding-top:28px;
   border-top:1px solid rgba(31,122,140,0.1);
 }
 
-.ps-label{
+.ps-label {
   font-family:var(--mono);
   font-size:10px;
   color:var(--teal2);
@@ -822,14 +865,14 @@ h2.sh{
   margin-bottom:18px;
 }
 
-.ps{
+.ps {
   display:flex;
   gap:14px;
   margin-bottom:18px;
   align-items:flex-start;
 }
 
-.ps-n{
+.ps-n {
   width:26px;
   height:26px;
   background:rgba(31,122,140,0.15);
@@ -844,13 +887,13 @@ h2.sh{
   flex-shrink:0;
 }
 
-.ps-t{
+.ps-t {
   font-size:14px;
   font-weight:600;
   margin-bottom:2px;
 }
 
-.ps-b{
+.ps-b {
   font-size:12px;
   font-weight:300;
   color:var(--gray);
@@ -858,33 +901,33 @@ h2.sh{
 }
 
 /* FAQ */
-.faq-grid{
+.faq-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:2px;
   margin-top:52px;
 }
 
-.faq-item{
+.faq-item {
   padding:30px;
   background:#ffffff;
   border:1px solid rgba(13,31,60,0.08);
   transition:all .2s ease;
 }
 
-.faq-item:hover{
+.faq-item:hover {
   transform:translateY(-3px);
   box-shadow:0 10px 28px rgba(0,0,0,0.08);
 }
 
-.faq-q{
+.faq-q {
   font-size:15px;
   font-weight:700;
   margin-bottom:10px;
   color:var(--navy);
 }
 
-.faq-a{
+.faq-a {
   font-size:13px;
   font-weight:300;
   color:#2e4563;
@@ -892,7 +935,7 @@ h2.sh{
 }
 
 /* BOTTOM CTA */
-.cta-band{
+.cta-band {
   background:linear-gradient(135deg,rgba(31,122,140,0.12) 0%,rgba(13,31,60,0.98) 100%);
   border-top:1px solid rgba(31,122,140,0.12);
   border-bottom:1px solid rgba(31,122,140,0.12);
@@ -900,92 +943,101 @@ h2.sh{
   padding:80px 48px;
 }
 
-.cta-band h2.sh{color:var(--white);}
-.cta-band .sub{color:rgba(244,248,252,0.62);}
+.cta-band h2.sh { color:var(--white); }
+.cta-band .sub { color:rgba(244,248,252,0.62); }
 
 /* FOOTER */
-footer{
+footer {
   background:rgba(8,18,36,0.98);
   border-top:1px solid rgba(31,122,140,0.1);
   padding:44px 48px;
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:20px;
 }
 
-.foot-logo{
+.foot-logo {
   display:flex;
   align-items:center;
   gap:10px;
 }
 
-.footer-brand{
+.footer-brand {
   font-size:15px;
   font-weight:800;
   color:var(--white);
 }
 
-.foot-tagline{
+.foot-tagline {
   font-family:var(--mono);
   font-size:10px;
   color:var(--gray);
   letter-spacing:0.08em;
 }
 
-.foot-links{
+.foot-links {
   display:flex;
   gap:24px;
   list-style:none;
+  flex-wrap:wrap;
 }
 
-.foot-links a{
+.foot-links a {
   font-size:13px;
   color:var(--gray);
   text-decoration:none;
   transition:color 0.2s;
 }
 
-.foot-links a:hover{color:var(--teal2);}
+.foot-links a:hover { color:var(--teal2); }
 
-.foot-copy{
+.foot-copy {
   font-family:var(--mono);
   font-size:10px;
   color:rgba(138,160,184,0.35);
 }
 
 /* ANIMATIONS */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px);}
-  to{opacity:1;transform:translateY(0);}
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
 }
 
-.hero-content>*{animation:fadeUp 0.65s ease both;}
-.hero-eyebrow{animation-delay:0.1s;}
-.hero h1{animation-delay:0.2s;}
-.hero-sub{animation-delay:0.3s;}
-.hero-actions{animation-delay:0.4s;}
-.hero-stats{animation-delay:0.5s;}
+.hero-content > * { animation:fadeUp 0.65s ease both; }
+.hero-eyebrow { animation-delay:0.1s; }
+.hero h1 { animation-delay:0.2s; }
+.hero-sub { animation-delay:0.3s; }
+.hero-actions { animation-delay:0.4s; }
+.hero-stats { animation-delay:0.5s; }
 
-@media(max-width:900px){
-  nav{padding:14px 20px;}
-  .nav-links{display:none;}
-  .hero{grid-template-columns:1fr;}
-  .hero-photo-col{display:none;}
-  .hero-content{padding:100px 24px 60px;}
-  .section-wrap{padding:60px 24px;}
-  .steps{grid-template-columns:1fr;}
-  .tiers-grid{grid-template-columns:1fr;}
-  .tc.feat{transform:none;}
-  .why-split{grid-template-columns:1fr;}
-  .why-photo{height:280px;}
-  .why-text{padding:48px 28px;}
-  .svc-body{grid-template-columns:1fr;padding:40px 24px;}
-  .svc-box{position:static;}
-  .svc-header{padding:52px 24px 36px;}
-  .faq-grid{grid-template-columns:1fr;}
-  footer{flex-direction:column;gap:20px;text-align:center;padding:36px 24px;}
-  .people-strip{grid-template-columns:1fr;}
-  .people-cell:not(:first-child){display:none;}
+/* MOBILE */
+@media(max-width:900px) {
+  nav { padding:14px 20px; }
+  .nav-links { display:none; }
+  .mobile-nav-cta { display:inline-block; }
+  .hero { grid-template-columns:1fr; }
+  .hero-photo-col { display:none; }
+  .hero-content { padding:100px 24px 60px; }
+  .hero-stats { gap:20px; flex-wrap:wrap; }
+  .section-wrap { padding:60px 24px; }
+  .steps { grid-template-columns:1fr; }
+  .step { border-right:none; border-bottom:1px solid rgba(13,31,60,0.08); }
+  .step:last-child { border-bottom:none; }
+  .tiers-grid { grid-template-columns:1fr; }
+  .tc.feat { transform:none; }
+  .tc.feat:hover { transform:translateY(-5px); }
+  .why-split { grid-template-columns:1fr; }
+  .why-photo { height:280px; }
+  .why-text { padding:48px 28px; }
+  .svc-body { grid-template-columns:1fr; padding:40px 24px; }
+  .svc-box { position:static; }
+  .svc-header { padding:52px 24px 36px; }
+  .faq-grid { grid-template-columns:1fr; }
+  footer { flex-direction:column; text-align:center; padding:36px 24px; }
+  .people-strip { grid-template-columns:1fr; }
+  .people-cell:not(:first-child) { display:none; }
+  .divider { margin:0 24px; }
 }
 </style>
 </head>
@@ -1002,20 +1054,21 @@ footer{
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#reports" class="nav-cta">Get My Report</a></li>
   </ul>
+  <a href="#reports" class="mobile-nav-cta">Get My Report</a>
 </nav>
 
 <div id="home">
   <div class="hero">
     <div class="hero-content">
       <div class="hero-eyebrow">Career Intelligence · State-Specific</div>
-      <h1>You Don't Need <br>More School.<br>You Need the <span class="accent">Right Path.</span></h1>
+      <h1>You Don’t Need <br>More School.<br>You Need the <span class="accent">Right Path.</span></h1>
       <p class="hero-sub">ARCmetry builds personalized career roadmaps anchored to real wage data in your state — so you know exactly what to do next and what it will actually pay.</p>
       <div class="hero-actions">
         <a href="#reports" class="btn-primary">Get My Report — Starting at $19.99</a>
         <a href="#how" class="btn-ghost">See how it works →</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num">48–72h</div><div class="stat-label">Report delivery</div></div>
+        <div><div class="stat-num">48–72 hours</div><div class="stat-label">Report delivery</div></div>
         <div><div class="stat-num">3 Tiers</div><div class="stat-label">Entry · Mobility · Strategy</div></div>
         <div><div class="stat-num">50+</div><div class="stat-label">Career pathways covered</div></div>
       </div>
@@ -1040,7 +1093,7 @@ footer{
     <div class="people-cell-overlay"></div>
     <div class="people-caption">
       <div class="people-caption-name">Administrative mobility</div>
-      <div class="people-caption-desc">HHA → Coordinator · Ohio market</div>
+      <div class="people-caption-desc">Office support → Coordinator · Ohio market</div>
     </div>
   </div>
   <div class="people-cell">
@@ -1087,9 +1140,10 @@ footer{
 
 <section id="reports">
   <div class="section-wrap" style="padding-bottom:0;">
-    <div class="eyebrow" style="justify-content:center;"><span style="width:0;"></span>Three Reports</div>
+    <div class="eyebrow centered">Three Reports</div>
     <h2 class="sh" style="text-align:center;margin:0 auto 10px;">Choose Your Tier</h2>
     <p class="sub" style="text-align:center;margin:0 auto;">One-time purchase. No subscription. Delivered to your inbox.</p>
+
     <div class="tiers-grid">
 
       <div class="tc">
@@ -1109,6 +1163,7 @@ footer{
             <li>Entry and year 3 salary projection</li>
           </ul>
           <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="tc-btn g" target="_blank" rel="noopener">Get My Pathway Analysis →</a>
+          <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
         </div>
       </div>
 
@@ -1130,6 +1185,7 @@ footer{
             <li>12–36 month pivot roadmap</li>
           </ul>
           <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="tc-btn t" target="_blank" rel="noopener">Get My Mobility Analysis →</a>
+          <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
         </div>
       </div>
 
@@ -1150,6 +1206,7 @@ footer{
             <li>12–36 month advancement roadmap</li>
           </ul>
           <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="tc-btn p" target="_blank" rel="noopener">Get My Career Strategy Report →</a>
+          <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
         </div>
       </div>
 
@@ -1172,7 +1229,7 @@ footer{
         <div class="wp-icon">📍</div>
         <div>
           <div class="wp-t">State-Specific Labor Market Data</div>
-          <p class="wp-b">Every pathway, salary projection, and funding source is grounded in your state — not national averages that don't reflect where you actually live.</p>
+          <p class="wp-b">Every pathway, salary projection, and funding source is grounded in your state — not national averages that don’t reflect where you actually live.</p>
         </div>
       </div>
       <div class="wp">
@@ -1204,24 +1261,24 @@ footer{
   <div class="svc-body">
     <div>
       <img class="svc-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80" alt="Young adults planning careers">
-      <div class="who-label">Who It's For</div>
+      <div class="who-label">Who It’s For</div>
       <ul class="who-list">
         <li>Trying to identify your first stable career path</li>
         <li>In high school, working on your GED, or a recent graduate unsure what comes next</li>
         <li>Enrolled in community college but feeling unsure about your direction</li>
-        <li>Tired of being told to "follow your passion" without any real guidance</li>
+        <li>Tired of being told to “follow your passion” without any real guidance</li>
       </ul>
-      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">You don't need to have it all figured out. You just need a starting point grounded in what actually pays in your state.</p>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">You don’t need to have it all figured out. You just need a starting point grounded in what actually pays in your state.</p>
       <div class="ps-wrap">
         <div class="ps-label">How It Works</div>
         <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
-        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent right after payment. Takes 10–15 minutes.</div></div></div>
+        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent immediately after purchase. Takes 10–15 minutes.</div></div></div>
         <div class="ps"><div class="ps-n">3</div><div><div class="ps-t">Receive your report</div><div class="ps-b">Delivered to your inbox within 48–72 hours of completed intake.</div></div></div>
       </div>
     </div>
     <div>
       <div class="svc-box">
-        <div class="svc-box-label">What's Included</div>
+        <div class="svc-box-label">What’s Included</div>
         <div class="svc-price g">$19.99</div>
         <div class="svc-billing">one-time · no subscription</div>
         <ul class="inc-list">
@@ -1235,7 +1292,7 @@ footer{
           <li>Barrier assessment and risk flags</li>
         </ul>
         <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="svc-cta g" target="_blank" rel="noopener">Get My Pathway Analysis — $19.99</a>
-        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hrs of completed intake.</p>
+        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
       </div>
     </div>
   </div>
@@ -1246,32 +1303,32 @@ footer{
 <div id="mobility">
   <div class="svc-header mob">
     <div class="svc-badge mob">Mobility Analysis · $39.99 · Most Popular</div>
-    <h1 class="svc-h1">You're Not Starting Over.<br><span style="color:var(--teal2);">You're Redirecting.</span></h1>
+    <h1 class="svc-h1">You’re Not Starting Over.<br><span style="color:var(--teal2);">You’re Redirecting.</span></h1>
     <p class="svc-h2">Maps your existing skills to higher-paying pathways and shows you the fastest, most affordable way to get there in your state.</p>
   </div>
   <div class="svc-body">
     <div>
       <img class="svc-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80" alt="Working professional woman">
-      <div class="who-label">Who It's For</div>
+      <div class="who-label">Who It’s For</div>
       <ul class="who-list">
         <li>Already working but want to increase your income or move up</li>
         <li>Stuck in retail, warehouse, food service, or a similar role with a salary ceiling</li>
-        <li>Underemployed — working a job that doesn't use your actual abilities</li>
+        <li>Underemployed — working a job that doesn’t use your actual abilities</li>
         <li>Transitioning out of the military and not sure how your skills translate</li>
         <li>A returning citizen rebuilding your career</li>
         <li>Simply ready to earn more and willing to put in the work</li>
       </ul>
-      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">You've already got more than you think. This report shows you how to use it.</p>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">You’ve already got more than you think. This report shows you how to use it.</p>
       <div class="ps-wrap">
         <div class="ps-label">How It Works</div>
         <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
-        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent right after payment. Takes 10–15 minutes.</div></div></div>
+        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent immediately after purchase. Takes 10–15 minutes.</div></div></div>
         <div class="ps"><div class="ps-n">3</div><div><div class="ps-t">Receive your report</div><div class="ps-b">Delivered to your inbox within 48–72 hours of completed intake.</div></div></div>
       </div>
     </div>
     <div>
       <div class="svc-box">
-        <div class="svc-box-label">What's Included</div>
+        <div class="svc-box-label">What’s Included</div>
         <div class="svc-price t">$39.99</div>
         <div class="svc-billing">one-time · no subscription</div>
         <ul class="inc-list">
@@ -1285,7 +1342,7 @@ footer{
           <li>Risk flags and mitigation guidance</li>
         </ul>
         <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="svc-cta t" target="_blank" rel="noopener">Get My Mobility Analysis — $39.99</a>
-        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hrs of completed intake.</p>
+        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
       </div>
     </div>
   </div>
@@ -1296,30 +1353,30 @@ footer{
 <div id="strategy">
   <div class="svc-header strat">
     <div class="svc-badge strat">Career Strategy Report · $69.99</div>
-    <h1 class="svc-h1">You've Built the Experience.<br><span style="color:#C084FC;">Now Get Paid for It.</span></h1>
-    <p class="svc-h2">Diagnoses exactly why your salary hasn't caught up with your value — and gives you a specific strategy to fix it in your state's job market.</p>
+    <h1 class="svc-h1">You’ve Built the Experience.<br><span style="color:#C084FC;">Now Get Paid for It.</span></h1>
+    <p class="svc-h2">Diagnoses exactly why your salary hasn’t caught up with your value — and gives you a specific strategy to fix it in your state’s job market.</p>
   </div>
   <div class="svc-body">
     <div>
       <img class="svc-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80" alt="Senior professional in meeting">
-      <div class="who-label">Who It's For</div>
+      <div class="who-label">Who It’s For</div>
       <ul class="who-list">
         <li>Already earning $50K+ or actively targeting a management or director-level role</li>
         <li>Doing more than your title reflects — and not being paid for it</li>
         <li>Unsure whether you need a new credential, a new employer, or a better negotiation strategy</li>
         <li>Ready to break through to $75K, $85K, or $100K+ within the next 1–3 years</li>
       </ul>
-      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This is not just a longer report. It is a four-layer career strategy: gap diagnosis, salary negotiation framework, market positioning analysis, and resume positioning guidance — all specific to your state's labor market.</p>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This is not just a longer report. It is a four-layer career strategy: gap diagnosis, salary negotiation framework, market positioning analysis, and resume positioning guidance — all specific to your state’s labor market.</p>
       <div class="ps-wrap">
         <div class="ps-label">How It Works</div>
         <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
-        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent right after payment. Takes 10–15 minutes.</div></div></div>
+        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent immediately after purchase. Takes 10–15 minutes.</div></div></div>
         <div class="ps"><div class="ps-n">3</div><div><div class="ps-t">Receive your report</div><div class="ps-b">Delivered to your inbox within 48–72 hours of completed intake.</div></div></div>
       </div>
     </div>
     <div>
       <div class="svc-box">
-        <div class="svc-box-label">What's Included</div>
+        <div class="svc-box-label">What’s Included</div>
         <div class="svc-price p">$69.99</div>
         <div class="svc-billing">one-time · no subscription</div>
         <ul class="inc-list">
@@ -1333,7 +1390,7 @@ footer{
           <li>12–36 month advancement roadmap</li>
         </ul>
         <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="svc-cta p" target="_blank" rel="noopener">Get My Career Strategy Report — $69.99</a>
-        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hrs of completed intake.</p>
+        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
       </div>
     </div>
   </div>
@@ -1348,7 +1405,7 @@ footer{
     <div class="faq-grid">
       <div class="faq-item">
         <div class="faq-q">How do I know which report to choose?</div>
-        <div class="faq-a">→ Trying to identify your first stable career path — <strong style="color:var(--teal2);">Pathway Analysis ($19.99)</strong><br><br>→ Already working but want to increase your income or move up — <strong style="color:var(--teal2);">Mobility Analysis ($39.99)</strong> — Most Popular<br><br>→ Earning $50K+ or targeting management or director-level roles — <strong style="color:var(--teal2);">Career Strategy Report ($69.99)</strong></div>
+        <div class="faq-a">Trying to identify your first stable career path — <strong style="color:var(--teal2);">Pathway Analysis ($19.99)</strong><br><br>Already working but want to increase your income or move up — <strong style="color:var(--teal2);">Mobility Analysis ($39.99)</strong> — Most Popular<br><br>Earning $50K+ or targeting management or director-level roles — <strong style="color:var(--teal2);">Career Strategy Report ($69.99)</strong></div>
       </div>
       <div class="faq-item">
         <div class="faq-q">How long does it take to receive my report?</div>
@@ -1377,9 +1434,9 @@ footer{
 <div class="divider"></div>
 
 <div class="cta-band">
-  <div class="eyebrow" style="justify-content:center;"><span style="width:0;"></span>Stop guessing. Start moving.</div>
+  <div class="eyebrow centered">Stop guessing. Start moving.</div>
   <h2 class="sh" style="font-size:clamp(26px,3.5vw,42px);margin:0 auto 14px;">Your career direction should be<br>based on real data.</h2>
-  <p class="sub" style="margin:0 auto 36px;text-align:center;">What pays in your state. What's in demand. What you can get certified in without going broke.</p>
+  <p class="sub" style="margin:0 auto 36px;text-align:center;">What pays in your state. What’s in demand. What you can get certified in without going broke.</p>
   <a href="#reports" class="btn-primary" style="font-size:16px;padding:16px 36px;">Get My Report — Starting at $19.99</a>
 </div>
 
