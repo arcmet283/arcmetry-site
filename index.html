@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARCmetry — Career Pathway Intelligence</title>
-<meta name="description" content="ARCmetry delivers personalized, state-specific career pathway reports based on your skills, barriers, and goals.">
+<meta name="description" content="ARCmetry analyzes labor market data to identify the certifications, skills, and career pathways that lead to higher-paying careers in your region.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,10 @@ body {
 /* Prevent fixed nav from covering anchor targets */
 #home,
 #how,
+#preview,
 #reports,
+#credibility,
+#guarantee,
 #pathway,
 #mobility,
 #strategy,
@@ -169,7 +172,7 @@ nav {
   font-weight:300;
   color:#425b76;
   line-height:1.7;
-  max-width:480px;
+  max-width:520px;
   margin-bottom:36px;
 }
 
@@ -353,7 +356,7 @@ h2.sh {
   font-size:16px;
   font-weight:300;
   color:#4f6780;
-  max-width:520px;
+  max-width:620px;
   line-height:1.7;
 }
 
@@ -423,6 +426,172 @@ h2.sh {
   font-size:10px;
   color:var(--teal2);
   letter-spacing:0.08em;
+}
+
+/* SAMPLE PREVIEW */
+.preview-band {
+  background:#ffffff;
+  border-top:1px solid rgba(13,31,60,0.08);
+  border-bottom:1px solid rgba(13,31,60,0.08);
+}
+
+.preview-grid {
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:22px;
+  margin-top:52px;
+}
+
+.preview-card {
+  background:linear-gradient(180deg,#ffffff 0%, #f6fbff 100%);
+  border:1px solid rgba(13,31,60,0.08);
+  border-radius:16px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(10,24,50,0.06);
+}
+
+.preview-card.featured {
+  border-color:rgba(31,122,140,0.22);
+  box-shadow:0 12px 36px rgba(31,122,140,0.10);
+}
+
+.preview-label {
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--teal2);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.preview-title {
+  font-size:22px;
+  font-weight:800;
+  color:var(--navy);
+  line-height:1.15;
+  margin-bottom:10px;
+}
+
+.preview-body {
+  font-size:14px;
+  color:#455c76;
+  line-height:1.75;
+}
+
+.preview-kpis {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:24px 0;
+}
+
+.preview-kpi {
+  background:#f1f8fd;
+  border:1px solid rgba(31,122,140,0.12);
+  border-radius:12px;
+  padding:14px;
+}
+
+.preview-kpi-num {
+  font-size:22px;
+  font-weight:800;
+  color:var(--teal);
+  line-height:1;
+  margin-bottom:4px;
+}
+
+.preview-kpi-label {
+  font-size:11px;
+  color:#5a718a;
+  line-height:1.4;
+}
+
+.preview-mini-list {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:18px;
+}
+
+.preview-mini-list li {
+  color:#425b76;
+  font-size:13px;
+  line-height:1.55;
+  padding-left:18px;
+  position:relative;
+}
+
+.preview-mini-list li::before {
+  content:'•';
+  position:absolute;
+  left:0;
+  color:var(--teal2);
+  font-weight:800;
+}
+
+.preview-mock {
+  margin-top:24px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(13,31,60,0.08);
+  background:#fbfdff;
+}
+
+.preview-mock-head {
+  background:#eef6fb;
+  border-bottom:1px solid rgba(13,31,60,0.08);
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+  color:#47617b;
+}
+
+.preview-mock-body {
+  padding:18px 16px;
+}
+
+.mock-row {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(13,31,60,0.06);
+  color:#304a66;
+  font-size:13px;
+}
+
+.mock-row:last-child {
+  border-bottom:none;
+}
+
+.mock-key {
+  font-weight:700;
+}
+
+.mock-value {
+  text-align:right;
+  color:#54708b;
+}
+
+.preview-strip {
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.preview-chip {
+  background:rgba(31,122,140,0.08);
+  border:1px solid rgba(31,122,140,0.14);
+  border-radius:999px;
+  padding:8px 12px;
+  text-align:center;
+  font-size:11px;
+  font-weight:600;
+  color:#24526a;
 }
 
 /* TIERS */
@@ -658,6 +827,62 @@ h2.sh {
   font-weight:300;
   color:rgba(244,248,252,0.52);
   line-height:1.65;
+}
+
+/* CREDIBILITY */
+.cred-grid {
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:28px;
+  margin-top:46px;
+}
+
+.cred-card,
+.guarantee-card {
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(31,122,140,0.14);
+  border-radius:16px;
+  padding:28px;
+}
+
+.cred-card h3,
+.guarantee-card h3 {
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.cred-card p,
+.guarantee-card p {
+  font-size:14px;
+  color:rgba(244,248,252,0.70);
+  line-height:1.8;
+}
+
+.data-list {
+  list-style:none;
+  margin-top:20px;
+  display:grid;
+  gap:12px;
+}
+
+.data-list li {
+  padding:14px 16px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(31,122,140,0.10);
+  font-size:14px;
+  color:rgba(244,248,252,0.82);
+}
+
+.data-list strong {
+  color:var(--white);
+}
+
+.guarantee-band {
+  background:linear-gradient(135deg,rgba(31,122,140,0.12) 0%,rgba(13,31,60,0.98) 100%);
+  border-top:1px solid rgba(31,122,140,0.12);
+  border-bottom:1px solid rgba(31,122,140,0.12);
 }
 
 /* SERVICE PAGES */
@@ -1012,6 +1237,13 @@ footer {
 .hero-stats { animation-delay:0.5s; }
 
 /* MOBILE */
+@media(max-width:1000px) {
+  .preview-grid,
+  .cred-grid {
+    grid-template-columns:1fr;
+  }
+}
+
 @media(max-width:900px) {
   nav { padding:14px 20px; }
   .nav-links { display:none; }
@@ -1038,6 +1270,8 @@ footer {
   .people-strip { grid-template-columns:1fr; }
   .people-cell:not(:first-child) { display:none; }
   .divider { margin:0 24px; }
+  .preview-strip { grid-template-columns:1fr; }
+  .preview-kpis { grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -1047,29 +1281,28 @@ footer {
   <a href="#home" class="nav-logo text-logo">ARCmetry</a>
   <ul class="nav-links">
     <li><a href="#how">How It Works</a></li>
+    <li><a href="#preview">Sample Report</a></li>
     <li><a href="#reports">Reports</a></li>
-    <li><a href="#pathway">Pathway</a></li>
-    <li><a href="#mobility">Mobility</a></li>
-    <li><a href="#strategy">Strategy</a></li>
+    <li><a href="#credibility">Data Sources</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#reports" class="nav-cta">Get My Report</a></li>
+    <li><a href="#reports" class="nav-cta">Start My ARCmetry Analysis</a></li>
   </ul>
-  <a href="#reports" class="mobile-nav-cta">Get My Report</a>
+  <a href="#reports" class="mobile-nav-cta">Start My Analysis</a>
 </nav>
 
 <div id="home">
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-eyebrow">Career Intelligence · State-Specific</div>
-      <h1>You Don’t Need <br>More School.<br>You Need the <span class="accent">Right Path.</span></h1>
-      <p class="hero-sub">ARCmetry builds personalized career roadmaps anchored to real wage data in your state — so you know exactly what to do next and what it will actually pay.</p>
+      <div class="hero-eyebrow">Career Intelligence · Region-Specific</div>
+      <h1>Find the Fastest Path to a <span class="accent">Higher-Paying Career.</span></h1>
+      <p class="hero-sub">ARCmetry analyzes real labor market data to identify the certifications, skills, and career pathways that lead to higher income in your region.</p>
       <div class="hero-actions">
-        <a href="#reports" class="btn-primary">Get My Report — Starting at $19.99</a>
-        <a href="#how" class="btn-ghost">See how it works →</a>
+        <a href="#reports" class="btn-primary">Start My ARCmetry Analysis</a>
+        <a href="#preview" class="btn-ghost">See a sample report →</a>
       </div>
       <div class="hero-stats">
-        <div><div class="stat-num">48–72 hours</div><div class="stat-label">Report delivery</div></div>
-        <div><div class="stat-num">3 Tiers</div><div class="stat-label">Entry · Mobility · Strategy</div></div>
+        <div><div class="stat-num">48–72 hours</div><div class="stat-label">Typical report delivery</div></div>
+        <div><div class="stat-num">3 Tiers</div><div class="stat-label">Pathway · Mobility · Strategy</div></div>
         <div><div class="stat-num">50+</div><div class="stat-label">Career pathways covered</div></div>
       </div>
     </div>
@@ -1092,16 +1325,16 @@ footer {
     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" alt="Professional woman at work">
     <div class="people-cell-overlay"></div>
     <div class="people-caption">
-      <div class="people-caption-name">Administrative mobility</div>
-      <div class="people-caption-desc">Office support → Coordinator · Ohio market</div>
+      <div class="people-caption-name">Income mobility</div>
+      <div class="people-caption-desc">Transferable skills → wage growth</div>
     </div>
   </div>
   <div class="people-cell">
     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80" alt="Manager professional">
     <div class="people-cell-overlay"></div>
     <div class="people-caption">
-      <div class="people-caption-name">Director-level strategy</div>
-      <div class="people-caption-desc">Ops Manager → Director · Texas market</div>
+      <div class="people-caption-name">Career strategy</div>
+      <div class="people-caption-desc">Gap diagnosis → positioning → salary</div>
     </div>
   </div>
 </div>
@@ -1110,27 +1343,27 @@ footer {
 
 <div id="how" class="how-band">
   <div class="section-wrap">
-    <div class="eyebrow">The Process</div>
-    <h2 class="sh">Simple process. Real results.</h2>
-    <p class="sub">No consultations. No waitlists. A clear career plan in your inbox within 48–72 hours.</p>
+    <div class="eyebrow">How It Works</div>
+    <h2 class="sh">Simple process. Clear direction.</h2>
+    <p class="sub">ARCmetry turns your work history, goals, and local labor market data into a career pathway report you can act on quickly.</p>
     <div class="steps">
       <div class="step">
         <div class="step-n">01</div>
-        <div class="step-t">Choose Your Report</div>
-        <p class="step-b">Select the tier that matches where you are — career entry, income mobility, or strategic advancement. Secure checkout via Stripe. Confirmation sent immediately.</p>
-        <div class="step-time">≈ 2 minutes</div>
+        <div class="step-t">Complete Your Intake</div>
+        <p class="step-b">Upload your resume if you have one and answer a few questions about your work history, goals, barriers, and location. This is what makes the report specific to you.</p>
+        <div class="step-time">10–15 minutes</div>
       </div>
       <div class="step">
         <div class="step-n">02</div>
-        <div class="step-t">Complete Your Intake Form</div>
-        <p class="step-b">Answer 15 questions about your work history, goals, barriers, and state. This is the data that makes your report specific to you — not a generic template.</p>
-        <div class="step-time">10–15 minutes</div>
+        <div class="step-t">Data Analysis</div>
+        <p class="step-b">ARCmetry analyzes regional labor market data, wage trends, credential pathways, and likely barrier risks to identify realistic next-step options.</p>
+        <div class="step-time">Back-end review</div>
       </div>
       <div class="step">
         <div class="step-n">03</div>
         <div class="step-t">Receive Your Report</div>
-        <p class="step-b">Your personalized PDF arrives in your inbox within 48–72 hours. Specific pathways, real salary data for your state, funding sources, and a step-by-step action plan.</p>
-        <div class="step-time">48–72 hours after intake</div>
+        <p class="step-b">Within 48–72 hours after your completed intake, you receive a detailed report showing the fastest route to higher income, including pathways, salary ranges, and next actions.</p>
+        <div class="step-time">48–72 hours</div>
       </div>
     </div>
   </div>
@@ -1138,10 +1371,95 @@ footer {
 
 <div class="divider"></div>
 
+<section id="preview" class="preview-band">
+  <div class="section-wrap">
+    <div class="eyebrow centered">Sample Report Preview</div>
+    <h2 class="sh" style="text-align:center;margin:0 auto 10px;">What your report actually looks like</h2>
+    <p class="sub" style="text-align:center;margin:0 auto;">Every ARCmetry report is customized, but this sample shows the kind of pathway recommendation, income breakdown, credential timeline, and action plan clients receive.</p>
+
+    <div class="preview-grid">
+      <div class="preview-card featured">
+        <div class="preview-label">Sample Page · Executive Snapshot</div>
+        <div class="preview-title">Recommended pathway: CNA → PCT</div>
+        <p class="preview-body">The report highlights the fastest route to stable income first, then shows the follow-on credential stack that creates wage growth without starting over.</p>
+
+        <div class="preview-kpis">
+          <div class="preview-kpi">
+            <div class="preview-kpi-num">$32K</div>
+            <div class="preview-kpi-label">Target income in year 1</div>
+          </div>
+          <div class="preview-kpi">
+            <div class="preview-kpi-num">$42K–$46K</div>
+            <div class="preview-kpi-label">Target income in year 3</div>
+          </div>
+          <div class="preview-kpi">
+            <div class="preview-kpi-num">$0</div>
+            <div class="preview-kpi-label">Out-of-pocket training cost with funding</div>
+          </div>
+          <div class="preview-kpi">
+            <div class="preview-kpi-num">2 mo.</div>
+            <div class="preview-kpi-label">Estimated time to first paycheck</div>
+          </div>
+        </div>
+
+        <div class="preview-mock">
+          <div class="preview-mock-head">
+            <span>ARCmetry Pathway Report</span>
+            <span>Sample overview</span>
+          </div>
+          <div class="preview-mock-body">
+            <div class="mock-row"><span class="mock-key">Primary pathway</span><span class="mock-value">Certified Nursing Assistant</span></div>
+            <div class="mock-row"><span class="mock-key">Mobility pathway</span><span class="mock-value">Patient Care Technician</span></div>
+            <div class="mock-row"><span class="mock-key">Stretch backup</span><span class="mock-value">Warehouse → Supervisor</span></div>
+            <div class="mock-row"><span class="mock-key">5-year earnings gain</span><span class="mock-value">~$157,000</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <div class="preview-label">Inside The Report</div>
+        <div class="preview-title">Salary ranges and credential timeline</div>
+        <p class="preview-body">Reports break down what the role pays, what it takes to enter, and how long it should realistically take to move from your current job to a stronger income position.</p>
+        <ul class="preview-mini-list">
+          <li>Current income vs projected income by year 1, year 3, and year 5+</li>
+          <li>Required certifications, likely cost, and estimated training timeline</li>
+          <li>Funding options that reduce or eliminate out-of-pocket cost</li>
+          <li>Break-even logic showing when the pathway starts paying off</li>
+        </ul>
+        <div class="preview-strip">
+          <div class="preview-chip">4–8 week CNA</div>
+          <div class="preview-chip">1 day BLS/CPR</div>
+          <div class="preview-chip">PCT stack later</div>
+        </div>
+      </div>
+
+      <div class="preview-card">
+        <div class="preview-label">Action Plan</div>
+        <div class="preview-title">Immediate next steps, not vague advice</div>
+        <p class="preview-body">Each report ends with a practical roadmap so the client knows exactly what to do first, second, and third instead of guessing.</p>
+        <ul class="preview-mini-list">
+          <li>Who to call first</li>
+          <li>Which documents to gather</li>
+          <li>Which funding application to open</li>
+          <li>Which employers or programs to target</li>
+          <li>What to do over the next 30 days and 12 months</li>
+        </ul>
+        <div class="preview-strip">
+          <div class="preview-chip">Next 3 actions</div>
+          <div class="preview-chip">12-month roadmap</div>
+          <div class="preview-chip">Barrier-aware plan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <section id="reports">
   <div class="section-wrap" style="padding-bottom:0;">
     <div class="eyebrow centered">Three Reports</div>
-    <h2 class="sh" style="text-align:center;margin:0 auto 10px;">Choose Your Tier</h2>
+    <h2 class="sh" style="text-align:center;margin:0 auto 10px;">Choose the right level of analysis</h2>
     <p class="sub" style="text-align:center;margin:0 auto;">One-time purchase. No subscription. Delivered to your inbox.</p>
 
     <div class="tiers-grid">
@@ -1150,19 +1468,19 @@ footer {
         <div class="tc-head">
           <div class="tc-price g">$19.99</div>
           <div class="tc-name">Pathway Analysis</div>
-          <div class="tc-best">Best for people trying to identify their first stable career path.</div>
-          <div class="tc-focus">Focuses on career entry, training options, and the fastest route to full-time income.</div>
+          <div class="tc-best">Best for people exploring new career options.</div>
+          <div class="tc-focus">Focuses on career pathways, salary potential, and credential requirements.</div>
         </div>
         <div class="tc-body">
           <ul class="tc-list">
             <li>2–3 career pathways matched to your state</li>
-            <li>Cert vs. college breakdown</li>
+            <li>Salary potential and credential breakdown</li>
             <li>State-specific funding guide</li>
             <li>Skills gap analysis</li>
             <li>12-month action plan with real next steps</li>
             <li>Entry and year 3 salary projection</li>
           </ul>
-          <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="tc-btn g" target="_blank" rel="noopener">Get My Pathway Analysis →</a>
+          <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="tc-btn g" target="_blank" rel="noopener">Get My Career Pathway — $19.99</a>
           <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
         </div>
       </div>
@@ -1172,8 +1490,8 @@ footer {
         <div class="tc-head">
           <div class="tc-price t">$39.99</div>
           <div class="tc-name">Mobility Analysis</div>
-          <div class="tc-best">Best for workers who already have a job but want to increase their income or move up.</div>
-          <div class="tc-focus">Focuses on advancement pathways, credential stacking, and income growth.</div>
+          <div class="tc-best">Best for workers trying to move up faster.</div>
+          <div class="tc-focus">Focuses on transferable skills, wage-gap analysis, and faster income growth.</div>
         </div>
         <div class="tc-body">
           <ul class="tc-list">
@@ -1184,7 +1502,7 @@ footer {
             <li>State-specific funding sources</li>
             <li>12–36 month pivot roadmap</li>
           </ul>
-          <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="tc-btn t" target="_blank" rel="noopener">Get My Mobility Analysis →</a>
+          <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="tc-btn t" target="_blank" rel="noopener">Start My ARCmetry Analysis — $39.99</a>
           <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
         </div>
       </div>
@@ -1193,19 +1511,19 @@ footer {
         <div class="tc-head">
           <div class="tc-price p">$69.99</div>
           <div class="tc-name">Career Strategy Report</div>
-          <div class="tc-best">Best for professionals earning $50K+ or targeting management or director-level roles.</div>
-          <div class="tc-focus">Focuses on career positioning, salary strategy, and long-term advancement planning.</div>
+          <div class="tc-best">Best for professionals planning major career moves.</div>
+          <div class="tc-focus">Focuses on gap diagnosis, positioning strategy, and salary negotiation framework.</div>
         </div>
         <div class="tc-body">
           <ul class="tc-list">
             <li>Gap diagnosis: credential, visibility, market</li>
             <li>State salary market benchmarks</li>
-            <li>Salary negotiation framework (2 tracks)</li>
+            <li>Salary negotiation framework</li>
             <li>Market positioning snapshot</li>
             <li>Resume positioning rewrite examples</li>
             <li>12–36 month advancement roadmap</li>
           </ul>
-          <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="tc-btn p" target="_blank" rel="noopener">Get My Career Strategy Report →</a>
+          <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="tc-btn p" target="_blank" rel="noopener">Start My Career Strategy — $69.99</a>
           <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
         </div>
       </div>
@@ -1223,27 +1541,27 @@ footer {
   <div class="why-text">
     <div class="eyebrow">Why ARCmetry</div>
     <h2 class="sh">This is not a career quiz.</h2>
-    <p class="sub">Most tools ask what you're passionate about and give you a list of jobs. ARCmetry does something different.</p>
+    <p class="sub">Most tools ask what you are passionate about and give you a list of jobs. ARCmetry does something different.</p>
     <div class="why-points">
       <div class="wp">
         <div class="wp-icon">📍</div>
         <div>
-          <div class="wp-t">State-Specific Labor Market Data</div>
-          <p class="wp-b">Every pathway, salary projection, and funding source is grounded in your state — not national averages that don’t reflect where you actually live.</p>
+          <div class="wp-t">State and regional labor market focus</div>
+          <p class="wp-b">Every pathway, salary projection, and funding source is grounded in your market — not a generic national average.</p>
         </div>
       </div>
       <div class="wp">
         <div class="wp-icon">🎯</div>
         <div>
-          <div class="wp-t">Barrier-Aware Recommendations</div>
-          <p class="wp-b">Transportation, childcare, criminal record, training budget — your barriers are integrated throughout your report, not ignored after the intake form.</p>
+          <div class="wp-t">Barrier-aware recommendations</div>
+          <p class="wp-b">Transportation, childcare, training budget, and record-related concerns are integrated into the analysis instead of ignored.</p>
         </div>
       </div>
       <div class="wp">
         <div class="wp-icon">⚡</div>
         <div>
-          <div class="wp-t">Actionable from Day One</div>
-          <p class="wp-b">Phone numbers. Organization names. Specific program costs. You could make your first call the same day you receive your report.</p>
+          <div class="wp-t">Actionable from day one</div>
+          <p class="wp-b">The report is built to move you into action quickly, with clear pathways, timelines, and practical next steps.</p>
         </div>
       </div>
     </div>
@@ -1252,11 +1570,57 @@ footer {
 
 <div class="divider"></div>
 
+<section id="credibility">
+  <div class="section-wrap">
+    <div class="eyebrow">Data Credibility</div>
+    <h2 class="sh" style="color:var(--white);">What ARCmetry uses to build your report</h2>
+    <p class="sub" style="color:rgba(244,248,252,0.62);">ARCmetry reports are built from labor market and credential data sources that help identify realistic wage outcomes, pathway viability, and training routes.</p>
+
+    <div class="cred-grid">
+      <div class="cred-card">
+        <h3>Data behind the analysis</h3>
+        <p>ARCmetry combines labor market wage data, state-level workforce information, credential pathway research, and practical barrier screening to identify which options are realistic, fundable, and likely to improve income.</p>
+        <ul class="data-list">
+          <li><strong>Bureau of Labor Statistics</strong> — occupational wages, outlook, and role benchmarks</li>
+          <li><strong>State workforce data</strong> — regional demand patterns, approved training, and placement infrastructure</li>
+          <li><strong>Regional labor market trends</strong> — what pays in your area, not just nationally</li>
+          <li><strong>Credential program pathways</strong> — training length, stackability, and entry requirements</li>
+        </ul>
+      </div>
+
+      <div class="cred-card">
+        <h3>What that means for you</h3>
+        <p>Instead of generic career inspiration, you receive a report that answers practical questions: what role fits, what it pays, what credential gets you there fastest, what barriers matter, and what steps to take first.</p>
+        <ul class="data-list">
+          <li><strong>Pathway fit</strong> — matched to your work history, goals, and budget</li>
+          <li><strong>Wage visibility</strong> — projected income at different career stages</li>
+          <li><strong>Training clarity</strong> — what you need, how long it takes, and what it may cost</li>
+          <li><strong>Execution plan</strong> — the first actions to move you forward quickly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="guarantee" class="guarantee-band">
+  <div class="section-wrap">
+    <div class="eyebrow centered">Satisfaction Guarantee</div>
+    <div class="guarantee-card" style="max-width:900px;margin:0 auto;text-align:center;">
+      <h3>ARCmetry Satisfaction Guarantee</h3>
+      <p>If your report does not provide clear career pathway insights, contact us within 7 days of delivery and we will review your request for a full refund.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <div id="pathway">
   <div class="svc-header path">
     <div class="svc-badge path">Pathway Analysis · $19.99</div>
-    <h1 class="svc-h1">Your First Real Career Plan.<br><span style="color:var(--teal3);">Not a Guess.</span></h1>
-    <p class="svc-h2">A specific, state-grounded career direction — without the pressure to pick a college major and hope for the best.</p>
+    <h1 class="svc-h1">Your first real career plan.<br><span style="color:var(--teal3);">Not a guess.</span></h1>
+    <p class="svc-h2">Built for people exploring new career options and needing clarity on pathways, salaries, and credentials.</p>
   </div>
   <div class="svc-body">
     <div>
@@ -1264,11 +1628,11 @@ footer {
       <div class="who-label">Who It’s For</div>
       <ul class="who-list">
         <li>Trying to identify your first stable career path</li>
-        <li>In high school, working on your GED, or a recent graduate unsure what comes next</li>
-        <li>Enrolled in community college but feeling unsure about your direction</li>
-        <li>Tired of being told to “follow your passion” without any real guidance</li>
+        <li>Exploring new career options and unsure where to start</li>
+        <li>Enrolled in school or recently graduated but need a practical direction</li>
+        <li>Tired of vague advice that does not connect to income</li>
       </ul>
-      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">You don’t need to have it all figured out. You just need a starting point grounded in what actually pays in your state.</p>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This report is focused on career pathways, salary potential, and credential requirements — the fastest route to stable income, not just more school.</p>
       <div class="ps-wrap">
         <div class="ps-label">How It Works</div>
         <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
@@ -1285,13 +1649,12 @@ footer {
           <li>Executive summary and client overview</li>
           <li>2–3 recommended pathways, state-specific</li>
           <li>Skills and gap analysis</li>
-          <li>Cert vs. college breakdown</li>
-          <li>State-specific funding guidance (WIOA, grants)</li>
+          <li>Salary outlook and credential requirements</li>
+          <li>State-specific funding guidance</li>
           <li>12-month action roadmap</li>
-          <li>Salary outlook: entry and 3-year target</li>
           <li>Barrier assessment and risk flags</li>
         </ul>
-        <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="svc-cta g" target="_blank" rel="noopener">Get My Pathway Analysis — $19.99</a>
+        <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="svc-cta g" target="_blank" rel="noopener">Get My Career Pathway — $19.99</a>
         <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
       </div>
     </div>
@@ -1303,8 +1666,8 @@ footer {
 <div id="mobility">
   <div class="svc-header mob">
     <div class="svc-badge mob">Mobility Analysis · $39.99 · Most Popular</div>
-    <h1 class="svc-h1">You’re Not Starting Over.<br><span style="color:var(--teal2);">You’re Redirecting.</span></h1>
-    <p class="svc-h2">Maps your existing skills to higher-paying pathways and shows you the fastest, most affordable way to get there in your state.</p>
+    <h1 class="svc-h1">You’re not starting over.<br><span style="color:var(--teal2);">You’re moving up.</span></h1>
+    <p class="svc-h2">Built for workers who want faster income growth using the skills they already have.</p>
   </div>
   <div class="svc-body">
     <div>
@@ -1312,13 +1675,11 @@ footer {
       <div class="who-label">Who It’s For</div>
       <ul class="who-list">
         <li>Already working but want to increase your income or move up</li>
-        <li>Stuck in retail, warehouse, food service, or a similar role with a salary ceiling</li>
-        <li>Underemployed — working a job that doesn’t use your actual abilities</li>
-        <li>Transitioning out of the military and not sure how your skills translate</li>
-        <li>A returning citizen rebuilding your career</li>
-        <li>Simply ready to earn more and willing to put in the work</li>
+        <li>Underemployed and ready for a stronger wage trajectory</li>
+        <li>Trying to translate existing experience into better-paying work</li>
+        <li>Need clarity on wage gaps, stackable credentials, and faster pivots</li>
       </ul>
-      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">You’ve already got more than you think. This report shows you how to use it.</p>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This report is built around transferable skills, wage-gap analysis, and the shortest route to a stronger income ceiling.</p>
       <div class="ps-wrap">
         <div class="ps-label">How It Works</div>
         <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
@@ -1339,9 +1700,8 @@ footer {
           <li>Credential stacking strategy</li>
           <li>State-specific funding sources</li>
           <li>12–36 month pivot roadmap</li>
-          <li>Risk flags and mitigation guidance</li>
         </ul>
-        <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="svc-cta t" target="_blank" rel="noopener">Get My Mobility Analysis — $39.99</a>
+        <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="svc-cta t" target="_blank" rel="noopener">Start My ARCmetry Analysis — $39.99</a>
         <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
       </div>
     </div>
@@ -1353,20 +1713,20 @@ footer {
 <div id="strategy">
   <div class="svc-header strat">
     <div class="svc-badge strat">Career Strategy Report · $69.99</div>
-    <h1 class="svc-h1">You’ve Built the Experience.<br><span style="color:#C084FC;">Now Get Paid for It.</span></h1>
-    <p class="svc-h2">Diagnoses exactly why your salary hasn’t caught up with your value — and gives you a specific strategy to fix it in your state’s job market.</p>
+    <h1 class="svc-h1">You’ve built the experience.<br><span style="color:#C084FC;">Now position it better.</span></h1>
+    <p class="svc-h2">Built for professionals planning major career moves and needing a sharper strategy around gaps, positioning, and salary negotiation.</p>
   </div>
   <div class="svc-body">
     <div>
       <img class="svc-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80" alt="Senior professional in meeting">
       <div class="who-label">Who It’s For</div>
       <ul class="who-list">
-        <li>Already earning $50K+ or actively targeting a management or director-level role</li>
-        <li>Doing more than your title reflects — and not being paid for it</li>
-        <li>Unsure whether you need a new credential, a new employer, or a better negotiation strategy</li>
-        <li>Ready to break through to $75K, $85K, or $100K+ within the next 1–3 years</li>
+        <li>Already earning $50K+ or targeting management/director-level roles</li>
+        <li>Trying to understand whether the problem is credential, market, or positioning</li>
+        <li>Ready for a more strategic salary and advancement plan</li>
+        <li>Need a framework for negotiation and long-term movement</li>
       </ul>
-      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This is not just a longer report. It is a four-layer career strategy: gap diagnosis, salary negotiation framework, market positioning analysis, and resume positioning guidance — all specific to your state’s labor market.</p>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This report focuses on gap diagnosis, positioning strategy, and the salary negotiation framework needed for bigger moves.</p>
       <div class="ps-wrap">
         <div class="ps-label">How It Works</div>
         <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
@@ -1384,12 +1744,12 @@ footer {
           <li>State salary benchmarks by role tier</li>
           <li>3 advancement pathways with projections</li>
           <li>Credential ROI comparison</li>
-          <li>Salary negotiation framework (2 tracks)</li>
+          <li>Salary negotiation framework</li>
           <li>Market positioning snapshot</li>
           <li>Resume positioning rewrite examples</li>
           <li>12–36 month advancement roadmap</li>
         </ul>
-        <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="svc-cta p" target="_blank" rel="noopener">Get My Career Strategy Report — $69.99</a>
+        <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="svc-cta p" target="_blank" rel="noopener">Start My Career Strategy — $69.99</a>
         <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
       </div>
     </div>
@@ -1404,28 +1764,28 @@ footer {
     <h2 class="sh">Common Questions</h2>
     <div class="faq-grid">
       <div class="faq-item">
+        <div class="faq-q">How long does the report take?</div>
+        <div class="faq-a">Reports are typically delivered within 48–72 hours after your completed intake form is submitted.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What data does ARCmetry use?</div>
+        <div class="faq-a">ARCmetry uses labor market data sources such as Bureau of Labor Statistics information, state workforce data, regional labor market trends, and credential pathway research.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Who is this service designed for?</div>
+        <div class="faq-a">ARCmetry is designed for people who want a faster, clearer path to higher-paying work — whether they are exploring, moving up, or planning a major career shift.</div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q">How do I know which report to choose?</div>
-        <div class="faq-a">Trying to identify your first stable career path — <strong style="color:var(--teal2);">Pathway Analysis ($19.99)</strong><br><br>Already working but want to increase your income or move up — <strong style="color:var(--teal2);">Mobility Analysis ($39.99)</strong> — Most Popular<br><br>Earning $50K+ or targeting management or director-level roles — <strong style="color:var(--teal2);">Career Strategy Report ($69.99)</strong></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How long does it take to receive my report?</div>
-        <div class="faq-a">Reports are delivered within 48–72 hours after your completed intake form is submitted. The clock starts when we receive your form — not when you pay. Most clients receive their report within 48 hours.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is this report specific to my state?</div>
-        <div class="faq-a">Yes. Every pathway recommendation, salary projection, funding source, and employer reference is specific to your state and metro area. A report for someone in South Carolina will look completely different from one for someone in Ohio or Texas.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What if I have a barrier like a criminal record or no car?</div>
-        <div class="faq-a">Barriers are not filtered out of your report — they are built into it. A criminal record, transportation dependency, or childcare constraint will directly shape which pathways are recommended and how the action plan is structured.</div>
+        <div class="faq-a">Choose Pathway Analysis if you need new-career direction, Mobility Analysis if you want faster income growth using your existing skills, and Career Strategy if you are making a higher-level career move.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do I need a resume to get started?</div>
-        <div class="faq-a">No. The intake form captures your work history, skills, and goals through 15 straightforward questions. A resume is optional and helps with more specific guidance, but it is not required.</div>
+        <div class="faq-a">No. A resume is helpful, but not required. The intake form is designed to collect the information needed to build your report.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What format is the report delivered in?</div>
-        <div class="faq-a">Reports are delivered as a professionally formatted PDF to your email inbox. No login required, no account to manage — just your report in your inbox, ready to read or print.</div>
+        <div class="faq-a">Reports are delivered as a professionally formatted PDF to your email inbox.</div>
       </div>
     </div>
   </div>
@@ -1435,9 +1795,9 @@ footer {
 
 <div class="cta-band">
   <div class="eyebrow centered">Stop guessing. Start moving.</div>
-  <h2 class="sh" style="font-size:clamp(26px,3.5vw,42px);margin:0 auto 14px;">Your career direction should be<br>based on real data.</h2>
-  <p class="sub" style="margin:0 auto 36px;text-align:center;">What pays in your state. What’s in demand. What you can get certified in without going broke.</p>
-  <a href="#reports" class="btn-primary" style="font-size:16px;padding:16px 36px;">Get My Report — Starting at $19.99</a>
+  <h2 class="sh" style="font-size:clamp(26px,3.5vw,42px);margin:0 auto 14px;">Your next career move should be based on real data.</h2>
+  <p class="sub" style="margin:0 auto 36px;text-align:center;">What pays in your region. What is in demand. What training gets you there fastest. What path fits your actual situation.</p>
+  <a href="#reports" class="btn-primary" style="font-size:16px;padding:16px 36px;">Start My ARCmetry Analysis</a>
 </div>
 
 <footer>
@@ -1449,9 +1809,9 @@ footer {
   </div>
   <ul class="foot-links">
     <li><a href="#how">How It Works</a></li>
-    <li><a href="#pathway">Pathway Analysis</a></li>
-    <li><a href="#mobility">Mobility Analysis</a></li>
-    <li><a href="#strategy">Career Strategy</a></li>
+    <li><a href="#preview">Sample Report</a></li>
+    <li><a href="#credibility">Data Sources</a></li>
+    <li><a href="#guarantee">Guarantee</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="foot-copy">© 2026 ARCmetry · All rights reserved</div>
