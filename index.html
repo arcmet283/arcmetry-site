@@ -1,3 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCmetry — Career Pathway Intelligence</title>
+<meta name="description" content="ARCmetry analyzes labor market data to identify the certifications, skills, and career pathways that lead to higher-paying careers in your region.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:   #0D1F3C;
+  --navy2:  #162B4D;
+  --teal:   #1F7A8C;
+  --teal2:  #26A0B8;
+  --teal3:  #06D6A0;
+  --green:  #2D6A4F;
+  --amber:  #E07B39;
+  --purple: #7B2D8B;
+  --white:  #F4F8FC;
+  --gray:   #8AA0B8;
+  --font:   'Plus Jakarta Sans', sans-serif;
+  --mono:   'DM Mono', monospace;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: linear-gradient(180deg, #f4f8fc 0%, #dfeaf5 18%, #0D1F3C 55%, #0D1F3C 100%);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Prevent fixed nav from covering anchor targets */
+#home,
+#how,
+#preview,
+#reports,
+#credibility,
+#guarantee,
+#pathway,
+#mobility,
+#strategy,
+#faq {
+  scroll-margin-top: 92px;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: rgba(13,31,60,0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(31,122,140,0.15);
+}
+
+.nav-logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+.text-logo {
+  font-size:22px;
+  font-weight:800;
+  color:var(--white);
+  letter-spacing:-0.02em;
+  text-decoration:none;
+}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:28px;
+  list-style:none;
+}
+
+.nav-links a {
+  color:rgba(244,248,252,0.7);
+  text-decoration:none;
+  font-size:13px;
+  font-weight:500;
+  transition:color 0.2s;
+}
+
+.nav-links a:hover { color:var(--teal2); }
+
+.nav-cta,
+.mobile-nav-cta {
+  background:var(--teal);
+  color:var(--white)!important;
+  padding:9px 20px;
+  border-radius:6px;
+  font-weight:700!important;
+  text-decoration:none;
+}
+
+.nav-cta:hover,
+.mobile-nav-cta:hover {
+  background:var(--teal2)!important;
+}
+
+.mobile-nav-cta {
+  display:none;
+  font-size:13px;
+}
+
+/* HERO */
+.hero {
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  padding:140px 48px 80px;
+  background:rgba(244,248,252,0.88);
+}
+
+.hero-eyebrow {
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--teal);
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  margin-bottom:24px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.hero-eyebrow::before {
+  content:'';
+  display:block;
+  width:28px;
+  height:1px;
+  background:var(--teal2);
+}
+
+.hero h1 {
+  font-size:clamp(36px,4.5vw,60px);
+  font-weight:800;
+  line-height:1.08;
+  letter-spacing:-0.025em;
+  margin-bottom:22px;
+  color:var(--navy);
+}
+
+.hero h1 .accent { color:var(--teal2); }
+
+.hero-sub {
+  font-size:17px;
+  font-weight:300;
+  color:#425b76;
+  line-height:1.7;
+  max-width:520px;
+  margin-bottom:36px;
+}
+
+.hero-actions {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.hero-photo-col {
+  position:relative;
+  z-index:2;
+  height:100vh;
+  overflow:hidden;
+}
+
+.hero-photo-col img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.55;
+}
+
+.hero-photo-col::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(270deg,transparent 50%,var(--navy) 100%);
+  z-index:1;
+}
+
+.hero-photo-col::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,var(--navy) 0%,transparent 20%,transparent 80%,var(--navy) 100%);
+  z-index:1;
+}
+
+.hero-stats {
+  display:flex;
+  gap:36px;
+  margin-top:48px;
+  padding-top:36px;
+  border-top:1px solid rgba(31,122,140,0.2);
+}
+
+.stat-num {
+  font-size:26px;
+  font-weight:800;
+  color:var(--teal2);
+  line-height:1;
+}
+
+.stat-label {
+  font-size:11px;
+  color:#5f7791;
+  margin-top:3px;
+}
+
+.btn-primary {
+  display:inline-block;
+  background:linear-gradient(135deg,var(--teal),var(--teal2));
+  color:var(--white);
+  padding:14px 28px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:15px;
+  text-decoration:none;
+  box-shadow:0 4px 24px rgba(31,122,140,0.35);
+  transition:all 0.2s;
+}
+
+.btn-primary:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(31,122,140,0.5);
+}
+
+.btn-ghost {
+  color:var(--navy);
+  font-size:14px;
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.btn-ghost:hover { color:var(--teal2); }
+
+/* PEOPLE STRIP */
+.people-strip {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  height:320px;
+  overflow:hidden;
+}
+
+.people-cell { position:relative; overflow:hidden; }
+
+.people-cell img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 0.6s;
+}
+
+.people-cell:hover img { transform:scale(1.04); }
+
+.people-cell-overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(13,31,60,0.92) 100%);
+}
+
+.people-caption {
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:20px 24px;
+}
+
+.people-caption-name {
+  font-size:13px;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:2px;
+}
+
+.people-caption-desc {
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--teal2);
+  letter-spacing:0.08em;
+}
+
+/* SECTIONS */
+.section-wrap {
+  max-width:1200px;
+  margin:0 auto;
+  padding:88px 48px;
+}
+
+.eyebrow {
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--teal2);
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.eyebrow::before {
+  content:'';
+  display:block;
+  width:20px;
+  height:1px;
+  background:var(--teal2);
+}
+
+.eyebrow.centered {
+  justify-content:center;
+}
+
+.eyebrow.centered::before {
+  display:none;
+}
+
+h2.sh {
+  font-size:clamp(26px,3.2vw,40px);
+  font-weight:800;
+  letter-spacing:-0.025em;
+  line-height:1.1;
+  margin-bottom:14px;
+  color:var(--navy);
+}
+
+.sub {
+  font-size:16px;
+  font-weight:300;
+  color:#4f6780;
+  max-width:620px;
+  line-height:1.7;
+}
+
+#how .sub {
+  color:#4a627c;
+  max-width:560px;
+}
+
+.divider {
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(31,122,140,0.18),transparent);
+  margin:0 48px;
+}
+
+/* HOW IT WORKS */
+.how-band {
+  background:#ffffff;
+  border-top:1px solid rgba(13,31,60,0.08);
+  border-bottom:1px solid rgba(13,31,60,0.08);
+}
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  margin-top:52px;
+}
+
+.step {
+  padding:42px 32px;
+  border-right:1px solid rgba(13,31,60,0.08);
+  transition:all .2s ease;
+}
+
+.step:hover {
+  transform:translateY(-3px);
+}
+
+.step:last-child { border-right:none; }
+
+.step-n {
+  font-family: var(--mono);
+  font-size: 48px;
+  font-weight: 500;
+  color: rgba(13,31,60,0.35);
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.step-t {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+
+.step-b {
+  font-size: 14px;
+  font-weight: 300;
+  color: #3f5873;
+  line-height: 1.8;
+}
+
+.step-time {
+  margin-top:16px;
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--teal2);
+  letter-spacing:0.08em;
+}
+
+/* SAMPLE PREVIEW */
+.preview-band {
+  background:#ffffff;
+  border-top:1px solid rgba(13,31,60,0.08);
+  border-bottom:1px solid rgba(13,31,60,0.08);
+}
+
+.preview-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+  margin-top:52px;
+}
+
+.preview-card {
+  background:linear-gradient(180deg,#ffffff 0%, #f6fbff 100%);
+  border:1px solid rgba(13,31,60,0.08);
+  border-radius:16px;
+  padding:28px;
+  box-shadow:0 10px 30px rgba(10,24,50,0.06);
+}
+
+.preview-card.featured {
+  border-color:rgba(31,122,140,0.22);
+  box-shadow:0 12px 36px rgba(31,122,140,0.10);
+}
+
+.preview-label {
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--teal2);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.preview-title {
+  font-size:22px;
+  font-weight:800;
+  color:var(--navy);
+  line-height:1.15;
+  margin-bottom:10px;
+}
+
+.preview-body {
+  font-size:14px;
+  color:#455c76;
+  line-height:1.75;
+}
+
+.preview-kpis {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin:24px 0;
+}
+
+.preview-kpi {
+  background:#f1f8fd;
+  border:1px solid rgba(31,122,140,0.12);
+  border-radius:12px;
+  padding:14px;
+}
+
+.preview-kpi-num {
+  font-size:22px;
+  font-weight:800;
+  color:var(--teal);
+  line-height:1;
+  margin-bottom:4px;
+}
+
+.preview-kpi-label {
+  font-size:11px;
+  color:#5a718a;
+  line-height:1.4;
+}
+
+.preview-mini-list {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:18px;
+}
+
+.preview-mini-list li {
+  color:#425b76;
+  font-size:13px;
+  line-height:1.55;
+  padding-left:18px;
+  position:relative;
+}
+
+.preview-mini-list li::before {
+  content:'•';
+  position:absolute;
+  left:0;
+  color:var(--teal2);
+  font-weight:800;
+}
+
+.preview-mock {
+  margin-top:24px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(13,31,60,0.08);
+  background:#fbfdff;
+}
+
+.preview-mock-head {
+  background:#eef6fb;
+  border-bottom:1px solid rgba(13,31,60,0.08);
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+  color:#47617b;
+}
+
+.preview-mock-body {
+  padding:18px 16px;
+}
+
+.mock-row {
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 0;
+  border-bottom:1px solid rgba(13,31,60,0.06);
+  color:#304a66;
+  font-size:13px;
+}
+
+.mock-row:last-child {
+  border-bottom:none;
+}
+
+.mock-key {
+  font-weight:700;
+}
+
+.mock-value {
+  text-align:right;
+  color:#54708b;
+}
+
+.preview-strip {
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.preview-chip {
+  background:rgba(31,122,140,0.08);
+  border:1px solid rgba(31,122,140,0.14);
+  border-radius:999px;
+  padding:8px 12px;
+  text-align:center;
+  font-size:11px;
+  font-weight:600;
+  color:#24526a;
+}
+
+/* TIERS */
+.tiers-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:56px;
+  align-items:start;
+}
+
+.tc {
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(31,122,140,0.15);
+  background:rgba(255,255,255,0.55);
+  transition:transform 0.25s, box-shadow 0.25s;
+}
+
+.tc:hover {
+  transform:translateY(-5px);
+  box-shadow:0 20px 56px rgba(0,0,0,0.22);
+}
+
+.tc.feat {
+  border-color:var(--teal2);
+  box-shadow:0 0 0 1px var(--teal2), 0 12px 48px rgba(31,122,140,0.15);
+  transform:scale(1.025);
+}
+
+.tc.feat:hover { transform:scale(1.025) translateY(-5px); }
+
+.tc-pop {
+  background:var(--teal2);
+  color:var(--navy);
+  font-family:var(--mono);
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  text-align:center;
+  padding:7px;
+}
+
+.tc-head {
+  padding:28px 24px 20px;
+  border-bottom:1px solid rgba(31,122,140,0.1);
+}
+
+.tc-price {
+  font-size:40px;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:4px;
+}
+
+.tc-price.g { color:var(--teal3); }
+.tc-price.t { color:var(--teal2); }
+.tc-price.p { color:#C084FC; }
+
+.tc-name {
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:10px;
+  color:var(--navy);
+}
+
+.tc-best {
+  font-size:13px;
+  font-weight:500;
+  color:#223b57;
+  line-height:1.5;
+  margin-bottom:6px;
+}
+
+.tc-focus {
+  font-size:12px;
+  font-weight:300;
+  color:#5d7490;
+  line-height:1.5;
+}
+
+.tc-body { padding:20px 24px 24px; }
+
+.tc-list {
+  list-style:none;
+  margin-bottom:24px;
+}
+
+.tc-list li {
+  font-size:13px;
+  font-weight:300;
+  color:#425b76;
+  padding:6px 0;
+  border-bottom:1px solid rgba(31,122,140,0.08);
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  line-height:1.4;
+}
+
+.tc-list li::before {
+  content:'→';
+  color:var(--teal2);
+  font-size:11px;
+  flex-shrink:0;
+  margin-top:1px;
+}
+
+.tc-list li:last-child { border-bottom:none; }
+
+.tc-btn {
+  display:block;
+  width:100%;
+  padding:12px;
+  text-align:center;
+  border-radius:7px;
+  font-weight:700;
+  font-size:14px;
+  text-decoration:none;
+  transition:all 0.2s;
+  border:none;
+  cursor:pointer;
+}
+
+.tc-btn.g {
+  background:rgba(45,106,79,0.2);
+  color:var(--green);
+  border:1px solid rgba(45,106,79,0.35);
+}
+
+.tc-btn.g:hover {
+  background:var(--green);
+  color:var(--white);
+}
+
+.tc-btn.t {
+  background:var(--teal);
+  color:var(--white);
+}
+
+.tc-btn.t:hover { background:var(--teal2); }
+
+.tc-btn.p {
+  background:rgba(123,45,139,0.2);
+  color:#8d4bd8;
+  border:1px solid rgba(123,45,139,0.35);
+}
+
+.tc-btn.p:hover {
+  background:var(--purple);
+  color:var(--white);
+}
+
+.tc-note {
+  margin-top:12px;
+  font-size:11px;
+  color:#5f7791;
+  line-height:1.6;
+  text-align:center;
+}
+
+/* WHY */
+.why-split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  min-height:560px;
+}
+
+.why-photo { position:relative; overflow:hidden; }
+
+.why-photo img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0.65;
+}
+
+.why-photo::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,var(--navy2) 0%,transparent 60%);
+}
+
+.why-text {
+  background:var(--navy2);
+  padding:72px 56px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.why-text h2.sh { color:var(--white); }
+.why-text .sub { color:rgba(244,248,252,0.6); }
+
+.why-points {
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  margin-top:36px;
+}
+
+.wp {
+  display:flex;
+  gap:16px;
+  align-items:flex-start;
+}
+
+.wp-icon {
+  width:38px;
+  height:38px;
+  border-radius:9px;
+  background:rgba(31,122,140,0.15);
+  border:1px solid rgba(31,122,140,0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:17px;
+  flex-shrink:0;
+}
+
+.wp-t {
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:3px;
+  color:var(--white);
+}
+
+.wp-b {
+  font-size:13px;
+  font-weight:300;
+  color:rgba(244,248,252,0.52);
+  line-height:1.65;
+}
+
+/* CREDIBILITY */
+.cred-grid {
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:28px;
+  margin-top:46px;
+}
+
+.cred-card,
+.guarantee-card {
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(31,122,140,0.14);
+  border-radius:16px;
+  padding:28px;
+}
+
+.cred-card h3,
+.guarantee-card h3 {
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.cred-card p,
+.guarantee-card p {
+  font-size:14px;
+  color:rgba(244,248,252,0.70);
+  line-height:1.8;
+}
+
+.data-list {
+  list-style:none;
+  margin-top:20px;
+  display:grid;
+  gap:12px;
+}
+
+.data-list li {
+  padding:14px 16px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(31,122,140,0.10);
+  font-size:14px;
+  color:rgba(244,248,252,0.82);
+}
+
+.data-list strong {
+  color:var(--white);
+}
+
+.guarantee-band {
+  background:linear-gradient(135deg,rgba(31,122,140,0.12) 0%,rgba(13,31,60,0.98) 100%);
+  border-top:1px solid rgba(31,122,140,0.12);
+  border-bottom:1px solid rgba(31,122,140,0.12);
+}
+
+/* SERVICE PAGES */
+.svc-header {
+  padding:72px 48px 52px;
+  position:relative;
+  overflow:hidden;
+}
+
+.svc-header.path {
+  background:linear-gradient(135deg,rgba(45,106,79,0.2) 0%,rgba(13,31,60,0.97) 100%);
+  border-top:1px solid rgba(45,106,79,0.2);
+}
+
+.svc-header.mob {
+  background:linear-gradient(135deg,rgba(31,122,140,0.2) 0%,rgba(13,31,60,0.97) 100%);
+  border-top:1px solid rgba(31,122,140,0.2);
+}
+
+.svc-header.strat {
+  background:linear-gradient(135deg,rgba(123,45,139,0.2) 0%,rgba(13,31,60,0.97) 100%);
+  border-top:1px solid rgba(123,45,139,0.2);
+}
+
+.svc-badge {
+  font-family:var(--mono);
+  font-size:10px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:5px 12px;
+  border-radius:20px;
+  display:inline-block;
+  margin-bottom:18px;
+}
+
+.svc-badge.path { background:rgba(45,106,79,0.2); color:var(--teal3); }
+.svc-badge.mob { background:rgba(31,122,140,0.2); color:var(--teal2); }
+.svc-badge.strat { background:rgba(123,45,139,0.2); color:#C084FC; }
+
+.svc-h1 {
+  font-size:clamp(28px,3.8vw,48px);
+  font-weight:800;
+  letter-spacing:-0.025em;
+  line-height:1.1;
+  margin-bottom:14px;
+}
+
+.svc-h2 {
+  font-size:16px;
+  font-weight:300;
+  color:rgba(244,248,252,0.62);
+  max-width:540px;
+  line-height:1.7;
+}
+
+.svc-body {
+  padding:52px 48px;
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:60px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.svc-photo {
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:32px;
+  opacity:0.8;
+}
+
+.who-label {
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--teal2);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.who-list {
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.who-list li {
+  display:flex;
+  gap:12px;
+  font-size:15px;
+  font-weight:300;
+  color:rgba(244,248,252,0.74);
+  line-height:1.55;
+}
+
+.who-list li::before {
+  content:'→';
+  color:var(--teal2);
+  flex-shrink:0;
+  margin-top:1px;
+}
+
+.svc-box {
+  background:rgba(22,43,77,0.65);
+  border:1px solid rgba(31,122,140,0.15);
+  border-radius:14px;
+  padding:28px;
+  position:sticky;
+  top:88px;
+}
+
+.svc-box-label {
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--teal2);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.svc-price {
+  font-size:36px;
+  font-weight:800;
+  line-height:1;
+  margin-bottom:3px;
+}
+
+.svc-price.g { color:var(--teal3); }
+.svc-price.t { color:var(--teal2); }
+.svc-price.p { color:#C084FC; }
+
+.svc-billing {
+  font-size:12px;
+  color:var(--gray);
+  margin-bottom:22px;
+}
+
+.inc-list {
+  list-style:none;
+  margin-bottom:22px;
+}
+
+.inc-list li {
+  font-size:13px;
+  font-weight:300;
+  color:rgba(244,248,252,0.62);
+  padding:7px 0;
+  border-bottom:1px solid rgba(31,122,140,0.08);
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+  line-height:1.4;
+}
+
+.inc-list li::before {
+  content:'✓';
+  color:var(--teal3);
+  font-size:11px;
+  flex-shrink:0;
+  margin-top:1px;
+}
+
+.inc-list li:last-child { border-bottom:none; }
+
+.svc-cta {
+  display:block;
+  width:100%;
+  padding:13px;
+  text-align:center;
+  border-radius:8px;
+  font-weight:700;
+  font-size:14px;
+  text-decoration:none;
+  margin-bottom:12px;
+  border:none;
+  cursor:pointer;
+}
+
+.svc-cta.g { background:var(--green); color:var(--white); }
+.svc-cta.t { background:var(--teal); color:var(--white); }
+.svc-cta.p { background:var(--purple); color:var(--white); }
+
+.svc-note {
+  font-size:11px;
+  color:var(--gray);
+  text-align:center;
+  line-height:1.6;
+}
+
+.ps-wrap {
+  margin-top:36px;
+  padding-top:28px;
+  border-top:1px solid rgba(31,122,140,0.1);
+}
+
+.ps-label {
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--teal2);
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.ps {
+  display:flex;
+  gap:14px;
+  margin-bottom:18px;
+  align-items:flex-start;
+}
+
+.ps-n {
+  width:26px;
+  height:26px;
+  background:rgba(31,122,140,0.15);
+  border:1px solid rgba(31,122,140,0.25);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--teal2);
+  flex-shrink:0;
+}
+
+.ps-t {
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:2px;
+}
+
+.ps-b {
+  font-size:12px;
+  font-weight:300;
+  color:var(--gray);
+  line-height:1.5;
+}
+
+/* FAQ */
+.faq-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px;
+  margin-top:52px;
+}
+
+.faq-item {
+  padding:30px;
+  background:#ffffff;
+  border:1px solid rgba(13,31,60,0.08);
+  transition:all .2s ease;
+}
+
+.faq-item:hover {
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px rgba(0,0,0,0.08);
+}
+
+.faq-q {
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:10px;
+  color:var(--navy);
+}
+
+.faq-a {
+  font-size:13px;
+  font-weight:300;
+  color:#2e4563;
+  line-height:1.7;
+}
+
+/* BOTTOM CTA */
+.cta-band {
+  background:linear-gradient(135deg,rgba(31,122,140,0.12) 0%,rgba(13,31,60,0.98) 100%);
+  border-top:1px solid rgba(31,122,140,0.12);
+  border-bottom:1px solid rgba(31,122,140,0.12);
+  text-align:center;
+  padding:80px 48px;
+}
+
+.cta-band h2.sh { color:var(--white); }
+.cta-band .sub { color:rgba(244,248,252,0.62); }
+
+/* FOOTER */
+footer {
+  background:rgba(8,18,36,0.98);
+  border-top:1px solid rgba(31,122,140,0.1);
+  padding:44px 48px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.foot-logo {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.footer-brand {
+  font-size:15px;
+  font-weight:800;
+  color:var(--white);
+}
+
+.foot-tagline {
+  font-family:var(--mono);
+  font-size:10px;
+  color:var(--gray);
+  letter-spacing:0.08em;
+}
+
+.foot-links {
+  display:flex;
+  gap:24px;
+  list-style:none;
+  flex-wrap:wrap;
+}
+
+.foot-links a {
+  font-size:13px;
+  color:var(--gray);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+
+.foot-links a:hover { color:var(--teal2); }
+
+.foot-copy {
+  font-family:var(--mono);
+  font-size:10px;
+  color:rgba(138,160,184,0.35);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+.hero-content > * { animation:fadeUp 0.65s ease both; }
+.hero-eyebrow { animation-delay:0.1s; }
+.hero h1 { animation-delay:0.2s; }
+.hero-sub { animation-delay:0.3s; }
+.hero-actions { animation-delay:0.4s; }
+.hero-stats { animation-delay:0.5s; }
+
+/* MOBILE */
+@media(max-width:1000px) {
+  .preview-grid,
+  .cred-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:900px) {
+  nav { padding:14px 20px; }
+  .nav-links { display:none; }
+  .mobile-nav-cta { display:inline-block; }
+  .hero { grid-template-columns:1fr; }
+  .hero-photo-col { display:none; }
+  .hero-content { padding:100px 24px 60px; }
+  .hero-stats { gap:20px; flex-wrap:wrap; }
+  .section-wrap { padding:60px 24px; }
+  .steps { grid-template-columns:1fr; }
+  .step { border-right:none; border-bottom:1px solid rgba(13,31,60,0.08); }
+  .step:last-child { border-bottom:none; }
+  .tiers-grid { grid-template-columns:1fr; }
+  .tc.feat { transform:none; }
+  .tc.feat:hover { transform:translateY(-5px); }
+  .why-split { grid-template-columns:1fr; }
+  .why-photo { height:280px; }
+  .why-text { padding:48px 28px; }
+  .svc-body { grid-template-columns:1fr; padding:40px 24px; }
+  .svc-box { position:static; }
+  .svc-header { padding:52px 24px 36px; }
+  .faq-grid { grid-template-columns:1fr; }
+  footer { flex-direction:column; text-align:center; padding:36px 24px; }
+  .people-strip { grid-template-columns:1fr; }
+  .people-cell:not(:first-child) { display:none; }
+  .divider { margin:0 24px; }
+  .preview-strip { grid-template-columns:1fr; }
+  .preview-kpis { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo text-logo">ARCmetry</a>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#preview">Sample Report</a></li>
+    <li><a href="#reports">Reports</a></li>
+    <li><a href="#credibility">Data Sources</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#reports" class="nav-cta">Start My ARCmetry Analysis</a></li>
+  </ul>
+  <a href="#reports" class="mobile-nav-cta">Start My Analysis</a>
+</nav>
+
+<div id="home">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Career Intelligence · Region-Specific</div>
+      <h1>Find the Fastest Path to a <span class="accent">Higher-Paying Career.</span></h1>
+      <p class="hero-sub">ARCmetry analyzes real labor market data to identify the certifications, skills, and career pathways that lead to higher income in your region.</p>
+      <div class="hero-actions">
+        <a href="#reports" class="btn-primary">Start My ARCmetry Analysis</a>
+        <a href="#preview" class="btn-ghost">See a sample report →</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">48–72 hours</div><div class="stat-label">Typical report delivery</div></div>
+        <div><div class="stat-num">3 Tiers</div><div class="stat-label">Pathway · Mobility · Strategy</div></div>
+        <div><div class="stat-num">50+</div><div class="stat-label">Career pathways covered</div></div>
+      </div>
+    </div>
+    <div class="hero-photo-col">
+      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=80" alt="Diverse professionals collaborating">
+    </div>
+  </div>
+</div>
+
+<div class="people-strip">
+  <div class="people-cell">
+    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1000&q=80" alt="Healthcare worker">
+    <div class="people-cell-overlay"></div>
+    <div class="people-caption">
+      <div class="people-caption-name">Healthcare pathway</div>
+      <div class="people-caption-desc">CNA → PCT → LPN · SC market</div>
+    </div>
+  </div>
+  <div class="people-cell">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" alt="Professional woman at work">
+    <div class="people-cell-overlay"></div>
+    <div class="people-caption">
+      <div class="people-caption-name">Income mobility</div>
+      <div class="people-caption-desc">Transferable skills → wage growth</div>
+    </div>
+  </div>
+  <div class="people-cell">
+    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80" alt="Manager professional">
+    <div class="people-cell-overlay"></div>
+    <div class="people-caption">
+      <div class="people-caption-name">Career strategy</div>
+      <div class="people-caption-desc">Gap diagnosis → positioning → salary</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div id="how" class="how-band">
+  <div class="section-wrap">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="sh">Simple process. Clear direction.</h2>
+    <p class="sub">ARCmetry turns your work history, goals, and local labor market data into a career pathway report you can act on quickly.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-t">Complete Your Intake</div>
+        <p class="step-b">Upload your resume if you have one and answer a few questions about your work history, goals, barriers, and location. This is what makes the report specific to you.</p>
+        <div class="step-time">10–15 minutes</div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-t">Data Analysis</div>
+        <p class="step-b">ARCmetry analyzes regional labor market data, wage trends, credential pathways, and likely barrier risks to identify realistic next-step options.</p>
+        <div class="step-time">Back-end review</div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-t">Receive Your Report</div>
+        <p class="step-b">Within 48–72 hours after your completed intake, you receive a detailed report showing the fastest route to higher income, including pathways, salary ranges, and next actions.</p>
+        <div class="step-time">48–72 hours</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 <section id="preview" class="preview-band">
   <div class="section-wrap">
     <div class="eyebrow centered">Sample Report Previews</div>
@@ -156,3 +1529,369 @@
     </p>
   </div>
 </section>
+
+<div class="divider"></div>
+
+<section id="reports">
+  <div class="section-wrap" style="padding-bottom:0;">
+    <div class="eyebrow centered">Three Reports</div>
+    <h2 class="sh" style="text-align:center;margin:0 auto 10px;">Choose the right level of analysis</h2>
+    <p class="sub" style="text-align:center;margin:0 auto;">One-time purchase. No subscription. Delivered to your inbox.</p>
+
+    <div class="tiers-grid">
+
+      <div class="tc">
+        <div class="tc-head">
+          <div class="tc-price g">$19.99</div>
+          <div class="tc-name">Pathway Analysis</div>
+          <div class="tc-best">Best for people exploring new career options.</div>
+          <div class="tc-focus">Focuses on career pathways, salary potential, and credential requirements.</div>
+        </div>
+        <div class="tc-body">
+          <ul class="tc-list">
+            <li>2–3 career pathways matched to your state</li>
+            <li>Salary potential and credential breakdown</li>
+            <li>State-specific funding guide</li>
+            <li>Skills gap analysis</li>
+            <li>12-month action plan with real next steps</li>
+            <li>Entry and year 3 salary projection</li>
+          </ul>
+          <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="tc-btn g" target="_blank" rel="noopener">Get My Career Pathway — $19.99</a>
+          <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
+        </div>
+      </div>
+
+      <div class="tc feat">
+        <div class="tc-pop">⭐ Most Popular</div>
+        <div class="tc-head">
+          <div class="tc-price t">$39.99</div>
+          <div class="tc-name">Mobility Analysis</div>
+          <div class="tc-best">Best for workers trying to move up faster.</div>
+          <div class="tc-focus">Focuses on transferable skills, wage-gap analysis, and faster income growth.</div>
+        </div>
+        <div class="tc-body">
+          <ul class="tc-list">
+            <li>Transferable skills analysis</li>
+            <li>Wage delta projection: current vs. target</li>
+            <li>Credential stacking strategy</li>
+            <li>Upskilling ROI breakdown</li>
+            <li>State-specific funding sources</li>
+            <li>12–36 month pivot roadmap</li>
+          </ul>
+          <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="tc-btn t" target="_blank" rel="noopener">Start My ARCmetry Analysis — $39.99</a>
+          <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="tc-head">
+          <div class="tc-price p">$69.99</div>
+          <div class="tc-name">Career Strategy Report</div>
+          <div class="tc-best">Best for professionals planning major career moves.</div>
+          <div class="tc-focus">Focuses on gap diagnosis, positioning strategy, and salary negotiation framework.</div>
+        </div>
+        <div class="tc-body">
+          <ul class="tc-list">
+            <li>Gap diagnosis: credential, visibility, market</li>
+            <li>State salary market benchmarks</li>
+            <li>Salary negotiation framework</li>
+            <li>Market positioning snapshot</li>
+            <li>Resume positioning rewrite examples</li>
+            <li>12–36 month advancement roadmap</li>
+          </ul>
+          <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="tc-btn p" target="_blank" rel="noopener">Start My Career Strategy — $69.99</a>
+          <p class="tc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="margin-top:64px;"></div>
+
+<div class="why-split">
+  <div class="why-photo">
+    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1400&q=80" alt="Adults in career training session">
+  </div>
+  <div class="why-text">
+    <div class="eyebrow">Why ARCmetry</div>
+    <h2 class="sh">This is not a career quiz.</h2>
+    <p class="sub">Most tools ask what you are passionate about and give you a list of jobs. ARCmetry does something different.</p>
+    <div class="why-points">
+      <div class="wp">
+        <div class="wp-icon">📍</div>
+        <div>
+          <div class="wp-t">State and regional labor market focus</div>
+          <p class="wp-b">Every pathway, salary projection, and funding source is grounded in your market — not a generic national average.</p>
+        </div>
+      </div>
+      <div class="wp">
+        <div class="wp-icon">🎯</div>
+        <div>
+          <div class="wp-t">Barrier-aware recommendations</div>
+          <p class="wp-b">Transportation, childcare, training budget, and record-related concerns are integrated into the analysis instead of ignored.</p>
+        </div>
+      </div>
+      <div class="wp">
+        <div class="wp-icon">⚡</div>
+        <div>
+          <div class="wp-t">Actionable from day one</div>
+          <p class="wp-b">The report is built to move you into action quickly, with clear pathways, timelines, and practical next steps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="credibility">
+  <div class="section-wrap">
+    <div class="eyebrow">Data Credibility</div>
+    <h2 class="sh" style="color:var(--white);">What ARCmetry uses to build your report</h2>
+    <p class="sub" style="color:rgba(244,248,252,0.62);">ARCmetry reports are built from labor market and credential data sources that help identify realistic wage outcomes, pathway viability, and training routes.</p>
+
+    <div class="cred-grid">
+      <div class="cred-card">
+        <h3>Data behind the analysis</h3>
+        <p>ARCmetry combines labor market wage data, state-level workforce information, credential pathway research, and practical barrier screening to identify which options are realistic, fundable, and likely to improve income.</p>
+        <ul class="data-list">
+          <li><strong>Bureau of Labor Statistics</strong> — occupational wages, outlook, and role benchmarks</li>
+          <li><strong>State workforce data</strong> — regional demand patterns, approved training, and placement infrastructure</li>
+          <li><strong>Regional labor market trends</strong> — what pays in your area, not just nationally</li>
+          <li><strong>Credential program pathways</strong> — training length, stackability, and entry requirements</li>
+        </ul>
+      </div>
+
+      <div class="cred-card">
+        <h3>What that means for you</h3>
+        <p>Instead of generic career inspiration, you receive a report that answers practical questions: what role fits, what it pays, what credential gets you there fastest, what barriers matter, and what steps to take first.</p>
+        <ul class="data-list">
+          <li><strong>Pathway fit</strong> — matched to your work history, goals, and budget</li>
+          <li><strong>Wage visibility</strong> — projected income at different career stages</li>
+          <li><strong>Training clarity</strong> — what you need, how long it takes, and what it may cost</li>
+          <li><strong>Execution plan</strong> — the first actions to move you forward quickly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="guarantee" class="guarantee-band">
+  <div class="section-wrap">
+    <div class="eyebrow centered">Satisfaction Guarantee</div>
+    <div class="guarantee-card" style="max-width:900px;margin:0 auto;text-align:center;">
+      <h3>ARCmetry Satisfaction Guarantee</h3>
+      <p>If your report does not provide clear career pathway insights, contact us within 7 days of delivery and we will review your request for a full refund.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div id="pathway">
+  <div class="svc-header path">
+    <div class="svc-badge path">Pathway Analysis · $19.99</div>
+    <h1 class="svc-h1">Your first real career plan.<br><span style="color:var(--teal3);">Not a guess.</span></h1>
+    <p class="svc-h2">Built for people exploring new career options and needing clarity on pathways, salaries, and credentials.</p>
+  </div>
+  <div class="svc-body">
+    <div>
+      <img class="svc-photo" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80" alt="Young adults planning careers">
+      <div class="who-label">Who It’s For</div>
+      <ul class="who-list">
+        <li>Trying to identify your first stable career path</li>
+        <li>Exploring new career options and unsure where to start</li>
+        <li>Enrolled in school or recently graduated but need a practical direction</li>
+        <li>Tired of vague advice that does not connect to income</li>
+      </ul>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This report is focused on career pathways, salary potential, and credential requirements — the fastest route to stable income, not just more school.</p>
+      <div class="ps-wrap">
+        <div class="ps-label">How It Works</div>
+        <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
+        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent immediately after purchase. Takes 10–15 minutes.</div></div></div>
+        <div class="ps"><div class="ps-n">3</div><div><div class="ps-t">Receive your report</div><div class="ps-b">Delivered to your inbox within 48–72 hours of completed intake.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="svc-box">
+        <div class="svc-box-label">What’s Included</div>
+        <div class="svc-price g">$19.99</div>
+        <div class="svc-billing">one-time · no subscription</div>
+        <ul class="inc-list">
+          <li>Executive summary and client overview</li>
+          <li>2–3 recommended pathways, state-specific</li>
+          <li>Skills and gap analysis</li>
+          <li>Salary outlook and credential requirements</li>
+          <li>State-specific funding guidance</li>
+          <li>12-month action roadmap</li>
+          <li>Barrier assessment and risk flags</li>
+        </ul>
+        <a href="https://buy.stripe.com/3cIeVebbsePT46S8Ds1B603" class="svc-cta g" target="_blank" rel="noopener">Get My Career Pathway — $19.99</a>
+        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div id="mobility">
+  <div class="svc-header mob">
+    <div class="svc-badge mob">Mobility Analysis · $39.99 · Most Popular</div>
+    <h1 class="svc-h1">You’re not starting over.<br><span style="color:var(--teal2);">You’re moving up.</span></h1>
+    <p class="svc-h2">Built for workers who want faster income growth using the skills they already have.</p>
+  </div>
+  <div class="svc-body">
+    <div>
+      <img class="svc-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=80" alt="Working professional woman">
+      <div class="who-label">Who It’s For</div>
+      <ul class="who-list">
+        <li>Already working but want to increase your income or move up</li>
+        <li>Underemployed and ready for a stronger wage trajectory</li>
+        <li>Trying to translate existing experience into better-paying work</li>
+        <li>Need clarity on wage gaps, stackable credentials, and faster pivots</li>
+      </ul>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This report is built around transferable skills, wage-gap analysis, and the shortest route to a stronger income ceiling.</p>
+      <div class="ps-wrap">
+        <div class="ps-label">How It Works</div>
+        <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
+        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent immediately after purchase. Takes 10–15 minutes.</div></div></div>
+        <div class="ps"><div class="ps-n">3</div><div><div class="ps-t">Receive your report</div><div class="ps-b">Delivered to your inbox within 48–72 hours of completed intake.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="svc-box">
+        <div class="svc-box-label">What’s Included</div>
+        <div class="svc-price t">$39.99</div>
+        <div class="svc-billing">one-time · no subscription</div>
+        <ul class="inc-list">
+          <li>Transferable skills analysis</li>
+          <li>2–3 pivot pathways with state salary data</li>
+          <li>Wage delta projection</li>
+          <li>Upskilling ROI — cost, time, break-even</li>
+          <li>Credential stacking strategy</li>
+          <li>State-specific funding sources</li>
+          <li>12–36 month pivot roadmap</li>
+        </ul>
+        <a href="https://buy.stripe.com/5kQ4gA5R837b5aW4nc1B602" class="svc-cta t" target="_blank" rel="noopener">Start My ARCmetry Analysis — $39.99</a>
+        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div id="strategy">
+  <div class="svc-header strat">
+    <div class="svc-badge strat">Career Strategy Report · $69.99</div>
+    <h1 class="svc-h1">You’ve built the experience.<br><span style="color:#C084FC;">Now position it better.</span></h1>
+    <p class="svc-h2">Built for professionals planning major career moves and needing a sharper strategy around gaps, positioning, and salary negotiation.</p>
+  </div>
+  <div class="svc-body">
+    <div>
+      <img class="svc-photo" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1400&q=80" alt="Senior professional in meeting">
+      <div class="who-label">Who It’s For</div>
+      <ul class="who-list">
+        <li>Already earning $50K+ or targeting management/director-level roles</li>
+        <li>Trying to understand whether the problem is credential, market, or positioning</li>
+        <li>Ready for a more strategic salary and advancement plan</li>
+        <li>Need a framework for negotiation and long-term movement</li>
+      </ul>
+      <p style="margin-top:20px;font-size:15px;font-weight:300;color:rgba(244,248,252,0.5);line-height:1.7;">This report focuses on gap diagnosis, positioning strategy, and the salary negotiation framework needed for bigger moves.</p>
+      <div class="ps-wrap">
+        <div class="ps-label">How It Works</div>
+        <div class="ps"><div class="ps-n">1</div><div><div class="ps-t">Purchase below</div><div class="ps-b">Secure checkout via Stripe. Confirmation email sent immediately.</div></div></div>
+        <div class="ps"><div class="ps-n">2</div><div><div class="ps-t">Complete your intake form</div><div class="ps-b">Sent immediately after purchase. Takes 10–15 minutes.</div></div></div>
+        <div class="ps"><div class="ps-n">3</div><div><div class="ps-t">Receive your report</div><div class="ps-b">Delivered to your inbox within 48–72 hours of completed intake.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="svc-box">
+        <div class="svc-box-label">What’s Included</div>
+        <div class="svc-price p">$69.99</div>
+        <div class="svc-billing">one-time · no subscription</div>
+        <ul class="inc-list">
+          <li>Gap diagnosis: credential, visibility, market</li>
+          <li>State salary benchmarks by role tier</li>
+          <li>3 advancement pathways with projections</li>
+          <li>Credential ROI comparison</li>
+          <li>Salary negotiation framework</li>
+          <li>Market positioning snapshot</li>
+          <li>Resume positioning rewrite examples</li>
+          <li>12–36 month advancement roadmap</li>
+        </ul>
+        <a href="https://buy.stripe.com/bJe9AUcfw37b9rc2f41B600" class="svc-cta p" target="_blank" rel="noopener">Start My Career Strategy — $69.99</a>
+        <p class="svc-note">Intake form sent immediately after purchase.<br>Report delivered within 48–72 hours of completed intake.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="faq">
+  <div class="section-wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="sh">Common Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">How long does the report take?</div>
+        <div class="faq-a">Reports are typically delivered within 48–72 hours after your completed intake form is submitted.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What data does ARCmetry use?</div>
+        <div class="faq-a">ARCmetry uses labor market data sources such as Bureau of Labor Statistics information, state workforce data, regional labor market trends, and credential pathway research.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Who is this service designed for?</div>
+        <div class="faq-a">ARCmetry is designed for people who want a faster, clearer path to higher-paying work — whether they are exploring, moving up, or planning a major career shift.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I know which report to choose?</div>
+        <div class="faq-a">Choose Pathway Analysis if you need new-career direction, Mobility Analysis if you want faster income growth using your existing skills, and Career Strategy if you are making a higher-level career move.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a resume to get started?</div>
+        <div class="faq-a">No. A resume is helpful, but not required. The intake form is designed to collect the information needed to build your report.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What format is the report delivered in?</div>
+        <div class="faq-a">Reports are delivered as a professionally formatted PDF to your email inbox.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<div class="cta-band">
+  <div class="eyebrow centered">Stop guessing. Start moving.</div>
+  <h2 class="sh" style="font-size:clamp(26px,3.5vw,42px);margin:0 auto 14px;">Your next career move should be based on real data.</h2>
+  <p class="sub" style="margin:0 auto 36px;text-align:center;">What pays in your region. What is in demand. What training gets you there fastest. What path fits your actual situation.</p>
+  <a href="#reports" class="btn-primary" style="font-size:16px;padding:16px 36px;">Start My ARCmetry Analysis</a>
+</div>
+
+<footer>
+  <div class="foot-logo">
+    <div>
+      <span class="footer-brand">ARCmetry</span>
+      <div class="foot-tagline">Career Pathway Intelligence · arcmetry.com</div>
+    </div>
+  </div>
+  <ul class="foot-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#preview">Sample Report</a></li>
+    <li><a href="#credibility">Data Sources</a></li>
+    <li><a href="#guarantee">Guarantee</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="foot-copy">© 2026 ARCmetry · All rights reserved</div>
+</footer>
+
+</body>
+</html>
