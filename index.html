@@ -42,6 +42,7 @@ body {
 #how,
 #preview,
 #reports,
+#lead-magnet,
 #credibility,
 #guarantee,
 #pathway,
@@ -762,6 +763,121 @@ h2.sh {
   line-height:1.6;
 }
 
+/* LEAD MAGNET */
+.lead-band {
+  background:#ffffff;
+  border-top:1px solid rgba(13,31,60,0.08);
+  border-bottom:1px solid rgba(13,31,60,0.08);
+}
+
+.lead-wrap {
+  max-width:900px;
+  margin:0 auto;
+  padding:72px 48px;
+  text-align:center;
+}
+
+.lead-card {
+  background:linear-gradient(180deg,#ffffff 0%, #f6fbff 100%);
+  border:1px solid rgba(13,31,60,0.08);
+  border-radius:18px;
+  padding:38px 32px;
+  box-shadow:0 12px 32px rgba(10,24,50,0.07);
+}
+
+.lead-title {
+  font-size:clamp(28px,3.4vw,42px);
+  font-weight:800;
+  color:var(--navy);
+  line-height:1.12;
+  margin-bottom:12px;
+  letter-spacing:-0.02em;
+}
+
+.lead-subtitle {
+  font-size:18px;
+  font-weight:700;
+  color:var(--teal);
+  margin-bottom:14px;
+}
+
+.lead-copy {
+  max-width:680px;
+  margin:0 auto 28px;
+  font-size:15px;
+  color:#4f6780;
+  line-height:1.8;
+}
+
+.lead-form-shell {
+  max-width:520px;
+  margin:0 auto;
+}
+
+.lead-fields {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.lead-input {
+  width:100%;
+  padding:14px 16px;
+  border:1px solid rgba(13,31,60,0.14);
+  border-radius:10px;
+  font-size:15px;
+  font-family:var(--font);
+  color:var(--navy);
+  background:#ffffff;
+}
+
+.lead-input:focus {
+  outline:none;
+  border-color:var(--teal2);
+  box-shadow:0 0 0 3px rgba(38,160,184,0.12);
+}
+
+.lead-btn {
+  width:100%;
+  display:inline-block;
+  background:linear-gradient(135deg,var(--teal),var(--teal2));
+  color:var(--white);
+  padding:14px 18px;
+  border:none;
+  border-radius:10px;
+  font-weight:700;
+  font-size:15px;
+  font-family:var(--font);
+  cursor:pointer;
+  box-shadow:0 4px 24px rgba(31,122,140,0.25);
+  transition:all 0.2s;
+}
+
+.lead-btn:hover {
+  transform:translateY(-1px);
+  box-shadow:0 8px 28px rgba(31,122,140,0.35);
+}
+
+.lead-note {
+  margin-top:14px;
+  font-size:12px;
+  color:#6a8097;
+  line-height:1.6;
+}
+
+.lead-confirm {
+  display:none;
+  margin-top:18px;
+  padding:14px 16px;
+  border-radius:12px;
+  background:rgba(6,214,160,0.10);
+  border:1px solid rgba(6,214,160,0.22);
+  color:#245b4d;
+  font-size:14px;
+  font-weight:600;
+}
+
 /* WHY */
 .why-split {
   display:grid;
@@ -1267,6 +1383,8 @@ footer {
   .tiers-grid { grid-template-columns:1fr; }
   .tc.feat { transform:none; }
   .tc.feat:hover { transform:translateY(-5px); }
+  .lead-wrap { padding:56px 24px; }
+  .lead-card { padding:28px 20px; }
   .why-split { grid-template-columns:1fr; }
   .why-photo { height:280px; }
   .why-text { padding:48px 28px; }
@@ -1291,6 +1409,7 @@ footer {
     <li><a href="#how">How It Works</a></li>
     <li><a href="#preview">Sample Report</a></li>
     <li><a href="#reports">Reports</a></li>
+    <li><a href="#lead-magnet">Free Guide</a></li>
     <li><a href="#credibility">Data Sources</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#reports" class="nav-cta">Start My ARCmetry Analysis</a></li>
@@ -1618,6 +1737,59 @@ footer {
   </div>
 </section>
 
+<section id="lead-magnet" class="lead-band">
+  <div class="lead-wrap">
+    <div class="lead-card">
+      <div class="eyebrow centered">Free Career Intelligence Guide</div>
+      <h2 class="lead-title">10 Certifications That Lead to $60K+ Careers Without a Degree</h2>
+      <div class="lead-subtitle">Get the Free Guide</div>
+      <p class="lead-copy">
+        Learn which credentials can lead to higher-paying careers in under a year — and how to identify the right pathway based on your background and local job market.
+      </p>
+
+      <div class="lead-form-shell">
+        <form
+          id="arcmetryLeadForm"
+          action="https://arcmetry.us9.list-manage.com/subscribe/post?u=60ced4503b0e157c2a6f454e4&amp;id=fecc32db71&amp;f_id=00d71ae1f0"
+          method="post"
+          target="_blank"
+          novalidate
+        >
+          <div class="lead-fields">
+            <input
+              type="text"
+              name="FNAME"
+              class="lead-input"
+              placeholder="First name (optional)"
+            />
+            <input
+              type="email"
+              name="EMAIL"
+              class="lead-input"
+              placeholder="Email address"
+              required
+            />
+          </div>
+
+          <div style="position:absolute; left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_60ced4503b0e157c2a6f454e4_fecc32db71" tabindex="-1" value="">
+          </div>
+
+          <button type="submit" class="lead-btn">Download the Guide</button>
+        </form>
+
+        <div id="leadConfirmMessage" class="lead-confirm">
+          Check your email — your Career Intelligence Guide is on the way.
+        </div>
+
+        <p class="lead-note">
+          Free download. No subscription required. ARCmetry may send follow-up career pathway insights and product updates.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="divider" style="margin-top:64px;"></div>
 
 <div class="why-split">
@@ -1901,12 +2073,28 @@ footer {
   <ul class="foot-links">
     <li><a href="#how">How It Works</a></li>
     <li><a href="#preview">Sample Report</a></li>
+    <li><a href="#lead-magnet">Free Guide</a></li>
     <li><a href="#credibility">Data Sources</a></li>
     <li><a href="#guarantee">Guarantee</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="foot-copy">© 2026 ARCmetry · All rights reserved</div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('arcmetryLeadForm');
+  const confirmBox = document.getElementById('leadConfirmMessage');
+
+  if (form && confirmBox) {
+    form.addEventListener('submit', function () {
+      setTimeout(function () {
+        confirmBox.style.display = 'block';
+      }, 300);
+    });
+  }
+});
+</script>
 
 </body>
 </html>
